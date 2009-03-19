@@ -1,0 +1,43 @@
+<assembly>
+	<id>packaged</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<componentDescriptors>
+		<componentDescriptor>src/assembly/dependencies.xml</componentDescriptor>
+	</componentDescriptors>
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<moduleSets>
+		<!-- mandatory jars -->
+		<moduleSet>
+			<includes>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.common</include>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.configuration</include>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.datasource.oracle</include>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.security</include>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.transaction</include>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.currency</include>
+			</includes>
+			<!-- the -javadoc.jar and -sources.jar will be included here -->
+			<sources>
+				<includeModuleDirectory>false</includeModuleDirectory>				
+				<fileSets>
+					<fileSet>
+						<directory>target</directory>
+						<outputDirectory>src</outputDirectory>
+						<includes>
+							<include>*-sources.jar</include>
+						</includes>
+					</fileSet>
+					<fileSet>
+						<directory>target</directory>
+						<outputDirectory>docs/api</outputDirectory>
+						<includes>
+							<include>*-javadoc.jar</include>
+						</includes>
+					</fileSet>
+				</fileSets>
+			</sources>
+		</moduleSet>
+	</moduleSets>
+</assembly>
