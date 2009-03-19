@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>ofmp-runtime-module</artifactId>
+		<groupId>org.eclipse.ofmp</groupId>
+		<version>1.0.0-M1</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.ofmp</groupId>
+	<artifactId>ofmp-runtime-server-module</artifactId>
+	<name>Eclipse OFMP Server Runtime Module</name>
+	<packaging>pom</packaging>
+	<version>1.0.0-M1</version>
+	<modules>
+		<module>core-runtime</module>
+	</modules>
+	
+	<profiles>
+		<profile>
+			<id>database_setup</id>
+			<activation>
+				<property>
+					<name>!no_database_setup</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>1.2</version>
+						<inherited>false</inherited>
+						<executions>
+							<execution>
+								<phase>install</phase>
+								<configuration>
+									<tasks>
+										<ant dir="sql" antfile="build_database.xml" target="build" />
+									</tasks>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

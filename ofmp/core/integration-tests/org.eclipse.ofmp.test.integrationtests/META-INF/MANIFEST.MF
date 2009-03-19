@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-Name: Spring OSGi Bundle
+Built-By: Fred
+Build-Jdk: 1.5.0_12
+Created-By: Apache Maven Bundle Plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.ofmp.test.integrationtests
+Tool: Bnd-0.0.238
+Bnd-LastModified: 1224330834093
+Bundle-Version: 1.0.0
+

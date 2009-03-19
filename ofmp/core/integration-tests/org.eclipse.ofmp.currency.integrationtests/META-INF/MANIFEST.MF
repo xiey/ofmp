@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-Name: Eclipse OFMP Currency Integration Tests
+Created-By: 1.5.0_12 (Sun Microsystems Inc.)
+Originally-Created-By: 1.5.0_12 (Sun Microsystems Inc.)
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.ofmp.org.eclipse.ofmp.currency.integr
+ ationtests
+Tool: Bnd-0.0.255
+Bnd-LastModified: 1226534683953
+Bundle-Version: 1.0.0
+

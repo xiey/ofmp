@@ -1,0 +1,35 @@
+<rcml 
+	xmlns="http://www.rcml.net/ns/binding"
+	xmlns:rcml="http://www.rcml.net/ns/rcml"
+	xmlns:swt="http://www.rcml.net/ns/swt"
+	language="ofmpSimulation">
+		
+	<swapDeal id="swap01">
+		<swapType value="STANDARD"/>				<!-- STANDARD, HEDGE -->
+		<nearLeg>
+			<basisRate value="1.02"/>				<!-- BigDecimal -->
+			<spread value="1"/>						<!-- BigDecimal -->
+			<rate value="2.02"/>					<!-- BigDecimal -->
+			<negociatedPart currency="EUR" amount="1000.00"/>
+			<secondPart currency="USD" amount="2020.00"/>
+			<valueDate value="01-08-2007"/>			<!-- Date -->
+		</nearLeg>
+		<farLeg>
+			<swapPoints value="2"/>					<!-- BigDecimal -->
+			<rate value="4.02"/>					<!-- BigDecimal -->
+			<negociatedPart currency="EUR" amount="1000.00"/>
+			<secondPart currency="USD" amount="4020.00"/>
+			<valueDate value="03-08-2007"/>			<!-- Date -->			
+		</farLeg>
+		<rateDirection value="NORMAL"/>				<!-- NORMAL, INVERSE -->
+		<buySellIndicator value="SELL"/>			<!-- BUY, SELL -->
+		<portfolio value="0"/>						<!-- Integer -->
+		<counterpartyId value="9997"/>				<!-- Integer -->
+		<tradeDate value="26-07-2007"/>				<!-- Date -->
+		<message>									<!-- String -->
+			This is a test deal entered by RCML.
+		</message>
+		<source value="OFMP"/>					<!-- OFMP, TOF, BACKOFFICE -->
+	</swapDeal>
+	
+</rcml>

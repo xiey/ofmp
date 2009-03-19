@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       <property name="ignoreUnresolvablePlaceholders" value="true"/>
+       <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_NEVER"/>
+
+       <property name="properties">
+           <props>
+		    	<prop key="datasource.url">jdbc:oracle:thin:@localhost:1521:XE</prop>
+		    	<prop key="datasource.user">VT_USER</prop>
+		    	<prop key="datasource.password">VT_USER</prop>
+           </props>
+       </property>
+   	</bean>
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="${datasource.url}"/>
+		<property name="username" value="${datasource.user}"/>
+		<property name="password" value="${datasource.password}"/>
+	</bean>
+	
+</beans>

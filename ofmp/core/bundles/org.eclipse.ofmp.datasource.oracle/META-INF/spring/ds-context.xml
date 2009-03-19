@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi-compendium http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
+
+	<osgix:property-placeholder persistent-id="default">
+		<osgix:default-properties> 
+		    	<prop key="datasource.host">localhost</prop>
+		    	<prop key="datasource.port">1521</prop>
+		    	<prop key="datasource.service">XE</prop>
+		    	<prop key="datasource.user">VT_USER</prop>
+		    	<prop key="datasource.password">VT_USER</prop>
+		</osgix:default-properties>
+	</osgix:property-placeholder>
+
+	<bean id="jdbcConnectionManager" class="org.jencks.factory.ConnectionManagerFactoryBean">
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+
+	<bean id="cf" class="org.tranql.connector.oracle.XAMCF">
+			   <property name="driverType" value="thin" />
+			   <property name="serverName" value="${datasource.host}" />
+			   <property name="portNumber" value="${datasource.port}" />
+			   <property name="serviceName" value="${datasource.service}" />
+			   <property name="userName" value="${datasource.user}" />
+			   <property name="password" value="${datasource.password}" />
+			</bean>
+	
+	<bean id="jdbcDataSource" class="org.jencks.factory.ConnectionFactoryFactoryBean">
+		<property name="managedConnectionFactory" ref="cf" />
+		<property name="connectionManager" ref="jdbcConnectionManager" />
+	</bean>
+	
+</beans>

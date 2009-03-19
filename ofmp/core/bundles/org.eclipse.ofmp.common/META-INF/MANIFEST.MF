@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Built-By: Fred
+Created-By: Apache Maven Bundle Plugin
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Import-Package: com.ibatis.sqlmap.client.extensions;version="2.3.0.677
+ ",org.aopalliance.intercept;version="1.0",org.apache.commons.lang,org
+ .apache.commons.lang.builder,org.apache.commons.lang.time,org.apache.
+ log4j;version="1.2",org.eclipse.ofmp.common.aop;version="1.0.0.M1",or
+ g.eclipse.ofmp.common.dao.ibatis.handlers;version="1.0.0.M1",org.ecli
+ pse.ofmp.common.dom;version="1.0.0.M1",org.eclipse.ofmp.common.except
+ ion;version="1.0.0.M1",org.eclipse.ofmp.common.utils;version="1.0.0.M
+ 1",org.springframework.transaction;version="2.5.5.A",org.springframew
+ ork.transaction.support;version="2.5.5.A"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bnd-LastModified: 1237471020140
+Export-Package: org.eclipse.ofmp.common.dom;uses:="org.apache.commons.
+ lang.builder,org.eclipse.ofmp.common.utils";version="1.0.0.M1",org.ec
+ lipse.ofmp.common.aop;uses:="org.springframework.transaction,org.apac
+ he.log4j,org.eclipse.ofmp.common.exception,org.springframework.transa
+ ction.support,org.aopalliance.intercept";version="1.0.0.M1",org.eclip
+ se.ofmp.common.dao.ibatis.handlers;uses:="com.ibatis.sqlmap.client.ex
+ tensions";version="1.0.0.M1",org.eclipse.ofmp.common.utils;uses:="org
+ .apache.commons.lang,org.apache.commons.lang.time";version="1.0.0.M1"
+ ,org.eclipse.ofmp.common.exception;version="1.0.0.M1"
+Bundle-Version: 1.0.0.M1
+Bundle-Name: Eclipse OFMP Common Bundle (Incubation)
+Bundle-Description: The OFMP project's goal is to build an extensible,
+  component-based Financial Market Platform based on industry business
+  requirements and state of the art technologies.
+Build-Jdk: 1.5.0_12
+Bundle-DocURL: http://www.eclipse.org/ofmp
+Bundle-ManifestVersion: 2
+Bundle-Vendor: Eclipse OFMP
+Bundle-SymbolicName: org.eclipse.ofmp.common
+Tool: Bnd-0.0.255
+

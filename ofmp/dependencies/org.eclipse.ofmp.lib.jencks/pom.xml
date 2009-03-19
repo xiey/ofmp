@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>org.eclipse.ofmp</groupId>
+		<artifactId>ofmp-dependencies-module</artifactId>
+		<version>1.0.0-M1</version>
+	</parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.ofmp</groupId>
+	<artifactId>org.eclipse.ofmp.lib.jencks</artifactId>
+	<version>1.0.0</version>
+	<name>Eclipse OFMP Jencks libs</name>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>org.eclipse.ofmp.lib.springframework</artifactId>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>javax.resource</groupId>
+			<artifactId>com.springsource.javax.resource</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>com.springsource.javax.transaction</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		<dependency>
+    		<groupId>geronimo</groupId>
+    		<artifactId>geronimo-transaction</artifactId>
+    		<version>1.0</version>
+    		<exclusions>
+    			<exclusion>
+        		  	<groupId>junit</groupId>
+          			<artifactId>junit</artifactId>
+		        </exclusion>
+    			<exclusion>
+        		  	<groupId>mx4j</groupId>
+          			<artifactId>mx4j</artifactId>
+		        </exclusion>
+    			<exclusion>
+        		  	<groupId>commons-jelly</groupId>
+          			<artifactId>commons-jelly-tags-velocity</artifactId>
+		        </exclusion>
+    			<exclusion>
+        		  	<groupId>velocity</groupId>
+          			<artifactId>velocity</artifactId>
+		        </exclusion>
+    			<exclusion>
+        		  	<groupId>concurrent</groupId>
+          			<artifactId>concurrent</artifactId>
+		        </exclusion>
+    		</exclusions>
+		</dependency> 
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>com.oracle.ojdbc</artifactId>
+			<version>10.2.0</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<resources>
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>META-INF/*</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>lib/*</include>
+				</includes>
+			</resource>
+		</resources>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<archive>
+						<manifestFile>META-INF/MANIFEST.MF</manifestFile>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

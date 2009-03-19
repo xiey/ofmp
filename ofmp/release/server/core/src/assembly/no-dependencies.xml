@@ -1,0 +1,33 @@
+<assembly>
+	<id>no-dependencies</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<moduleSets>
+		<!-- mandatory jars -->
+		<moduleSet>
+			<includes>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.common</include>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.configuration</include>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.currency</include>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.datasource.oracle</include>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.security</include>
+				<include>org.eclipse.ofmp:org.eclipse.ofmp.transaction</include>
+			</includes>
+			<!-- the .jar and -sources.jar will be included here -->
+			<sources>
+				<includeModuleDirectory>false</includeModuleDirectory>				
+				<fileSets>
+					<fileSet>
+						<directory>target</directory>
+						<outputDirectory>dist</outputDirectory>
+						<includes>
+							<include>*.jar</include>
+						</includes>
+					</fileSet>
+				</fileSets>
+			</sources>
+		</moduleSet>
+	</moduleSets>
+</assembly>

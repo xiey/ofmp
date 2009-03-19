@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Built-By: Fred
+Created-By: Apache Maven Bundle Plugin
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Import-Package: javax.sql,org.apache.log4j;version="1.2",org.dbunit.da
+ tabase;version="2.2",org.dbunit.dataset;version="2.2",org.dbunit.data
+ set.xml;version="2.2",org.dbunit.ext.oracle;version="2.2",org.dbunit.
+ operation;version="2.2",org.eclipse.ofmp.security.business;version="1
+ .0.0.M1",org.eclipse.ofmp.test;version="1.0.0.M1",org.eclipse.ofmp.te
+ st.utils;version="1.0.0.M1",org.osgi.framework;version="1.4",org.spri
+ ngframework.core.io;version="2.5.5.A",org.springframework.jdbc.dataso
+ urce;version="2.5.5.A",org.springframework.osgi.context;version="1.1.
+ 2.A",org.springframework.osgi.test;version="1.1.2.A",org.springframew
+ ork.osgi.test.platform;version="1.1.2.A",org.springframework.osgi.tes
+ t.provisioning;version="1.1.2.A",org.springframework.security;version
+ ="2.0.0.A",org.springframework.security.context;version="2.0.0.A",org
+ .springframework.security.providers;version="2.0.0.A",org.springframe
+ work.util;version="2.5.5.A"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bnd-LastModified: 1228689837537
+Export-Package: org.eclipse.ofmp.test;uses:="org.springframework.osgi.
+ test.platform,org.osgi.framework,org.springframework.security,org.ecl
+ ipse.ofmp.test.utils,org.springframework.core.io,org.springframework.
+ security.providers,org.springframework.security.context,org.eclipse.o
+ fmp.security.business,org.springframework.osgi.test,org.springframewo
+ rk.osgi.test.provisioning,org.springframework.util";version="1.0.0.M1
+ ",org.eclipse.ofmp.test.utils;uses:="org.apache.log4j,org.springframe
+ work.core.io,org.springframework.osgi.test.provisioning";version="1.0
+ .0.M1"
+Bundle-Version: 1.0.0.M1
+Ignore-Package: org.eclipse.ofmp.test.internal
+Bundle-Name: Eclipse OFMP Test bundle
+Bundle-Description: The OFMP project's goal is to build an extensible,
+  component-based Financial Market Platform based on industry business
+  requirements and state of the art technologies.
+Build-Jdk: 1.5.0_12
+Private-Package: org.eclipse.ofmp.test.internal,testdata
+Bundle-DocURL: http://www.eclipse.org/ofmp
+Originally-Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: Eclipse OFMP
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.ofmp.test
+Tool: Bnd-0.0.255
+

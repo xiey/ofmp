@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd
+                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd"
+    >
+
+    <bean id="securityProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       <property name="ignoreUnresolvablePlaceholders" value="true"/>
+       <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+       <property name="properties">
+           <props>
+			   <prop key="cifs.pdc">localhost</prop>
+               <prop key="cifs.domain">domain</prop>
+           </props>
+       </property>
+   	</bean>    
+
+	<!-- DAO -->    
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="classpath:org/eclipse/ofmp/security/dao/internal/ibatisconfig.xml"/>
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<bean id="userDAO" class="org.eclipse.ofmp.security.dao.internal.UserDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	
+	<bean id="authenticationDAO" class="org.eclipse.ofmp.security.dao.internal.AuthenticationDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+
+	<!-- Services -->    
+ 	<bean id="securityInterceptor" class="org.springframework.security.intercept.method.aopalliance.MethodSecurityInterceptor">
+ 		<property name="authenticationManager">
+ 			<bean class="org.springframework.security.providers.ProviderManager">
+ 				<property name="providers">
+ 					<list>
+						<bean class="org.eclipse.ofmp.security.business.internal.OFMPAuthenticationProvider">
+							<property name="sessionService" ref="sessionService"/>
+						</bean> 
+ 					</list>
+ 				</property>
+ 			</bean>
+ 		</property>
+
+		<property name="objectDefinitionSource">
+			<bean class="org.springframework.security.annotation.SecuredMethodDefinitionSource"/>
+		</property>
+		
+		<property name="validateConfigAttributes" value="false"/>
+		<property name="rejectPublicInvocations" value="false"/>
+
+		<property name="accessDecisionManager">
+			<bean id="accessDecisionManager" class="org.springframework.security.vote.AffirmativeBased">
+				<property name="decisionVoters">
+					<list>
+						<bean class="org.springframework.security.vote.RoleVoter"/>
+					</list>
+				</property>
+			</bean>
+		</property>
+ 	</bean>
+    
+	<bean id="authenticationManager" class="org.springframework.security.providers.ProviderManager">
+		<property name="providers">
+			<list>
+				<bean class="org.eclipse.ofmp.security.business.internal.OFMPAuthenticationProvider">
+					<property name="sessionService" ref="sessionService"/>
+				</bean> 
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="sessionService" class="org.eclipse.ofmp.security.business.internal.SessionService" />
+
+	<bean id="authenticationService" class="org.eclipse.ofmp.security.business.internal.AuthenticationServiceImpl">
+	  	<property name="loginProvider" ref="daoAuthenticationProvider" />
+	</bean>
+
+	<bean id="authenticationLocalService" class="org.eclipse.ofmp.security.business.internal.AuthenticationLocalServiceImpl">
+	  	<property name="sessionService" ref="sessionService"/>
+	</bean>
+
+	
+	<bean id="daoAuthenticationProvider" class="org.eclipse.ofmp.security.business.internal.DaoAuthenticationProvider">
+		<property name="authenticationDAO" ref="authenticationDAO"/>
+		<property name="userDAO" ref="userDAO"/>
+		<property name="sessionService" ref="sessionService"/>
+	</bean>
+
+	<bean id="cifsAuthenticationProvider" class="org.eclipse.ofmp.security.business.internal.CIFSAuthenticationProvider">
+		<property name="authenticationDAO" ref="authenticationDAO"/>
+		<property name="userDAO" ref="userDAO"/>
+		<property name="sessionService" ref="sessionService"/>
+		<property name="PDC" value="${cifs.pdc}"/>
+		<property name="domain" value="${cifs.domain}"/>
+	</bean>
+	
+</beans>

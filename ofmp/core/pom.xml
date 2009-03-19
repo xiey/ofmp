@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <parent>
+    <groupId>org.eclipse.ofmp</groupId>
+    <artifactId>ofmp</artifactId>
+    <version>1.0.0-M1</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.eclipse.ofmp</groupId>
+  <artifactId>ofmp-core-module</artifactId>
+  <packaging>pom</packaging>
+  <name>Eclipse OFMP Core Module</name>
+  
+  <modules>
+    <module>bundles</module>
+  </modules>
+  
+  <!-- to use these profiles invoke maven with -Pprofile-name, e.g. -->
+  <!-- mvn -Pit test                                                -->
+  <profiles>
+          
+    <!-- integration testing profile -->
+    <profile>
+      <id>it</id>
+      <modules>
+        <module>integration-tests</module>
+      </modules>
+    </profile>
+
+  </profiles>
+
+</project>

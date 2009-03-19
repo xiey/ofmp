@@ -1,0 +1,23 @@
+<rcml 
+	xmlns="http://www.rcml.net/ns/binding"
+	xmlns:rcml="http://www.rcml.net/ns/rcml"
+	xmlns:swt="http://www.rcml.net/ns/swt"
+	language="ofmpSimulation">
+		
+	<forwardDeal id="forward01">
+		<spotRate value="2.2"/>						<!-- BigDecimal -->
+		<swapPoints value="1.0"/>					<!-- BigDecimal -->
+		<negociatedPart currency="EUR" amount="1000.00" />
+		<secondPart currency="USD" amount="3200.00" />
+		<rateDirection value="NORMAL"/>				<!-- NORMAL, INVERSE -->
+		<buySellIndicator value="SELL"/>			<!-- BUY, SELL -->
+		<valueDate value="01-08-2007"/>				<!-- Date -->
+		<tradeDate value="26-07-2007"/>				<!-- Date -->
+		<counterpartyId value="9995"/>				<!-- Integer -->
+		<message>									<!-- String -->
+			This is a test deal entered by RCML.
+		</message>
+		<source value="OFMP"/>					<!-- OFMP, TOF, BACKOFFICE -->
+	</forwardDeal>
+
+</rcml>

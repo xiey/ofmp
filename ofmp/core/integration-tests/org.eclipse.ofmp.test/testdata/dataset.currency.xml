@@ -1,0 +1,167 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+
+	<table name="CURRENCY">
+		<column>ISOCODE</column>
+		<column>NAME</column>
+		<column>CLS</column>
+
+		<row>
+			<value>AUD</value>
+			<value>Australian Dollar</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>BGN</value>
+			<value>Bulgarian Lev</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>BRL</value>
+			<value>BrazilianReal</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>CAD</value>
+			<value>Canadian Dollar</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>CHF</value>
+			<value>Swiss Franc</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>CYP</value>
+			<value>Cyprus Pound</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>CZK</value>
+			<value>Czech Koruna</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>DKK</value>
+			<value>Danish Kroner</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>EEK</value>
+			<value>Estonian Kroon</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>EUR</value>
+			<value>Euro</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>GBP</value>
+			<value>British pound</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>HKD</value>
+			<value>Honk Kong Dollar</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>HUF</value>
+			<value>Hungarian Forint</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>ISK</value>
+			<value>Icelandic Kronur</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>ISV</value>
+			<value>IcelandKro(2)</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>JPY</value>
+			<value>Japan Yen</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>NOK</value>
+			<value>Norway Kroner</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>NZD</value>
+			<value>NewZealand Dollar</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>PLN</value>
+			<value>Polish Zloty</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>RON</value>
+			<value>Romanian Lei</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>SEK</value>
+			<value>SwedishKroner</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>SGD</value>
+			<value>Singapore Dollar</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>THB</value>
+			<value>Thai Bath</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>TRY</value>
+			<value>Turkish Lira</value>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>USD</value>
+			<value>US Dollar</value>
+			<value>T</value>
+		</row>
+
+		<row>
+			<value>ZAR</value>
+			<value>S.Afr.Rand</value>
+			<value>T</value>
+		</row>
+
+	</table>
+
+</dataset>

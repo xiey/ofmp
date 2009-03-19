@@ -1,0 +1,248 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+	<table name="USERS">
+		<column>ID</column>
+		<column>NAME</column>
+		<column>OSUSER</column>	
+		<column>ENABLED</column>
+		<column>GENERATION</column>
+
+		<row>
+			<value>1</value>
+			<value>FX Trader</value>
+			<value>ofmp-fx-dealer</value>
+			<value>T</value>
+			<value>0</value>
+		</row>
+
+		<row>
+			<value>2</value>
+			<value>Back Office</value>
+			<value>ofmp-test-bo</value>
+			<value>T</value>
+			<value>0</value>
+		</row>
+
+		<row>
+			<value>3</value>
+			<value>Mid. Office</value>
+			<value>ofmp-test-mo</value>
+			<value>T</value>
+			<value>0</value>
+		</row>
+
+		<row>
+			<value>4</value>
+			<value>Administrator</value>
+			<value>ofmp-test-admin</value>
+			<value>T</value>
+			<value>0</value>
+		</row>
+
+		<row>
+			<value>5</value>
+			<value>Jimi Hendrix</value>
+			<value>jimi</value>
+			<value>T</value>
+			<value>0</value>
+		</row>
+
+		<row>
+			<value>6</value>
+			<value>Helpdesk</value>
+			<value>ofmp-test-helpde</value>
+			<value>T</value>
+			<value>0</value>
+		</row>
+		
+		<row>
+			<value>7</value>
+			<value>MM Trader</value>
+			<value>ofmp-mm-dealer</value>
+			<value>T</value>
+			<value>0</value>
+		</row>
+		
+		<row>
+			<value>8</value>
+			<value>FX Trader2</value>
+			<value>ofmp-fx-dealer2</value>
+			<value>T</value>
+			<value>0</value>
+		</row>
+		
+		<row>
+			<value>9</value>
+			<value>MM Trader</value>
+			<value>ofmp-mm-dealer2</value>
+			<value>T</value>
+			<value>0</value>
+		</row>
+		
+	</table>
+
+	<table name="ROLE">
+		<column>ID</column>
+		<column>USR</column>
+		<column>ROLE</column>
+
+		<row>
+			<value>1</value>
+			<value>1</value>
+			<value>FX_TRADER</value>
+		</row>
+
+		<row>
+			<value>2</value>
+			<value>2</value>
+			<value>BACKOFFICE</value>
+		</row>
+
+		<row>
+			<value>3</value>
+			<value>3</value>
+			<value>MIDOFFICE</value>
+		</row>
+
+		<row>
+			<value>4</value>
+			<value>4</value>
+			<value>FX_TRADER</value>
+		</row>
+
+		<row>
+			<value>5</value>
+			<value>4</value>
+			<value>MIDOFFICE</value>
+		</row>
+
+		<row>
+			<value>6</value>
+			<value>4</value>
+			<value>BACKOFFICE</value>
+		</row>
+
+		<row>
+			<value>7</value>
+			<value>5</value>
+			<value>FX_TRADER</value>
+		</row>
+
+		<row>
+			<value>8</value>
+			<value>4</value>
+			<value>HELPDESK</value>
+		</row>
+
+		<row>
+			<value>9</value>
+			<value>6</value>
+			<value>HELPDESK</value>
+		</row>
+
+		<row>
+			<value>10</value>
+			<value>7</value>
+			<value>MM_TRADER</value>
+		</row>
+		
+		<row>
+			<value>11</value>
+			<value>8</value>
+			<value>FX_TRADER</value>
+		</row>
+		
+		<row>
+			<value>12</value>
+			<value>9</value>
+			<value>MM_TRADER</value>
+		</row>
+	</table>
+
+	<table name="DEALER">
+		<column>ID</column>
+		<column>GENERATION</column>
+
+		<row>
+			<value>1</value>
+			<value>0</value>
+		</row>
+
+		<row>
+			<value>5</value>
+			<value>0</value>
+		</row>
+		
+		<row>
+			<value>7</value>
+			<value>0</value>
+		</row>
+		
+		<row>
+			<value>8</value>
+			<value>0</value>
+		</row>
+
+		<row>
+			<value>9</value>
+			<value>0</value>
+		</row>
+	</table>
+
+	<table name="DEALER_CODE">
+		<column>SYSTEM_ID</column>
+		<column>CODE</column>
+		<column>DEALER</column>
+
+		<row>
+			<value>REUTERS</value>
+			<value>PAPI</value>
+			<value>1</value>
+		</row>
+
+		<row>
+			<value>REUTERS</value>
+			<value>TOM</value>
+			<value>5</value>
+		</row>
+
+
+		<row>
+			<value>EBS</value>
+			<value>AA1</value>
+			<value>5</value>
+		</row>
+
+		<row>
+			<value>EBS</value>
+			<value>AA2</value>
+			<value>5</value>
+		</row>
+
+		<row>
+			<value>EBS</value>
+			<value>AA3</value>
+			<value>5</value>
+		</row>
+
+
+		<row>
+			<value>EBS</value>
+			<value>TA1</value>
+			<value>1</value>
+		</row>
+
+		<row>
+			<value>EBS</value>
+			<value>TA2</value>
+			<value>1</value>
+		</row>
+
+		<row>
+			<value>EBS</value>
+			<value>TA3</value>
+			<value>1</value>
+		</row>
+	</table>
+
+</dataset>

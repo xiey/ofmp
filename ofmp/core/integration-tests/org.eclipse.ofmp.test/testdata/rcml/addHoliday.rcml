@@ -1,0 +1,8 @@
+<rcml 
+	xmlns="http://www.rcml.net/ns/binding"
+	xmlns:rcml="http://www.rcml.net/ns/rcml"
+	xmlns:swt="http://www.rcml.net/ns/swt"
+	language="ofmpSimulation">
+	
+	<addHoliday currency="USD" date="10-09-2007" />
+</rcml>

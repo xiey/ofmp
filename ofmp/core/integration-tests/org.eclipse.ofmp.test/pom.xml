@@ -1,0 +1,162 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>ofmp-core-integration-tests-module</artifactId>
+		<groupId>org.eclipse.ofmp</groupId>
+		<version>1.0.0-M1</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.ofmp</groupId>
+	<artifactId>org.eclipse.ofmp.test</artifactId>
+	<version>1.0.0-M1</version>
+	<packaging>bundle</packaging>
+	<name>Eclipse OFMP Test Bundle (Incubation)</name>
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>org.eclipse.ofmp.lib.springframework</artifactId>
+			<type>pom</type>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>org.eclipse.ofmp.lib.springframework.security</artifactId>
+			<type>pom</type>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.test</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.dbunit</groupId>
+			<artifactId>com.springsource.org.dbunit</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.objectweb.asm</groupId>
+			<artifactId>com.springsource.org.objectweb.asm</artifactId>
+			<version>2.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.extensions.annotation</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aopalliance</groupId>
+			<artifactId>com.springsource.org.aopalliance</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>com.oracle.ojdbc</artifactId>
+			<version>10.2.0</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>org.eclipse.ofmp.security</artifactId>
+			<version>1.0.0-M1</version>
+		</dependency>
+		
+		<!-- Equinox OSGi platform -->
+		<dependency>
+			<groupId>org.eclipse.osgi</groupId>
+			<artifactId>org.eclipse.osgi</artifactId>
+			<version>${equinox.ver}</version>
+		</dependency>
+		
+        <dependency>
+          <groupId>org.junit</groupId>
+          <artifactId>com.springsource.junit</artifactId>
+          <version>3.8.2</version>
+        </dependency>
+
+		<dependency>
+			<groupId>org.apache.log4j</groupId>
+			<artifactId>com.springsource.org.apache.log4j</artifactId>
+			<version>1.2.15</version>
+		</dependency>
+				
+	</dependencies>
+	<build>
+		<resources>
+			<!-- standard Maven folder -->
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<!-- plus root folder -->
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>META-INF/*</include>
+					<include>testdata/*</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<version>1.4.3</version>
+				<configuration>
+					<manifestLocation>META-INF</manifestLocation>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Export-Package>!*.internal.*,
+							${project.artifactId}.*;version="${project.version}"</Export-Package>
+						<Private-Package>${project.artifactId}.internal</Private-Package>
+						<Bundle-RequiredExecutionEnvironment>J2SE-1.5</Bundle-RequiredExecutionEnvironment>
+						<Include-Resource>src/main/resources,
+							{maven-resources}</Include-Resource>
+					</instructions>
+				</configuration>
+			</plugin>
+
+			<!-- generate manifest automatically once the classes are processed -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

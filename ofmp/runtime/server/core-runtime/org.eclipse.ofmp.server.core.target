@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.2"?>
+
+<target name="org.eclipse.ofmp.server">
+
+   <location path="${project_loc:ofmp-runtime-server-core-module}\target\eclipse_plugins"/>
+
+   <content useAllPlugins="true">
+      <plugins>
+      </plugins>
+      <features>
+      </features>
+      <extraLocations>
+         <location path="${project_loc:ofmp-runtime-server-core-module}\target\maven_plugins"/>
+      </extraLocations>
+   </content>
+
+</target>

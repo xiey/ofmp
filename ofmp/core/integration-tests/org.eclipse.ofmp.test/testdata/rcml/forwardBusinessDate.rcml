@@ -1,0 +1,12 @@
+<rcml 
+	xmlns="http://www.rcml.net/ns/binding"
+	xmlns:rcml="http://www.rcml.net/ns/rcml"
+	xmlns:swt="http://www.rcml.net/ns/swt"
+	language="ofmpSimulation">
+	
+	<setBusinessDate date="10-08-2007 11:00"/>
+	<doRollToStartOfBusinessDay/>
+	<doRollBusinessDate unit="DAY" count="3"/>
+	<doRollToEndOfBusinessDay/>
+	
+</rcml>

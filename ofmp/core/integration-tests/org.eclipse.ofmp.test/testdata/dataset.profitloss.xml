@@ -1,0 +1,35 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+
+	<table name="PROFIT_LOSS">
+		<column>ID</column>
+		<column>TYPE</column>
+		<column>VALUE_DATE</column>
+		<column>CURRENCY</column>
+		<column>DEAL_ID</column>
+		<column>VALUE</column>
+		<column>CONVERTED_VALUE</column>
+
+		<row>
+			<value>5000</value>
+			<value>ACCOUNT_MANAGER_SALES</value>
+			<value>2007-06-21</value>
+			<value>EUR</value>
+			<value>19001</value>
+			<value>100000</value>
+			<value>100000</value>
+		</row>
+
+		<row>
+			<value>5001</value>
+			<value>ACCOUNT_MANAGER_SALES</value>
+			<value>2007-06-23</value>
+			<value>USD</value>
+			<value>19002</value>
+			<value>80000</value>
+			<value>60087.12633318</value>
+		</row>
+
+	</table>
+
+</dataset>

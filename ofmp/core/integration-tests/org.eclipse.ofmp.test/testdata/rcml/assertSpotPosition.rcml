@@ -1,0 +1,58 @@
+<rcml 
+	xmlns="http://www.rcml.net/ns/binding"
+	xmlns:rcml="http://www.rcml.net/ns/rcml"
+	xmlns:swt="http://www.rcml.net/ns/swt"
+	language="ofmpSimulation">
+	
+	<setBusinessDate date="13-08-2007 08:00"/>
+	<assertBusinessDateEquals date="13-08-2007 08:00"/>
+	<assertIsBusinessDay value="true"/>
+
+	<doRollBusinessDate unit="DAY" count="1"/>
+	<assertBusinessDateEquals date="14-08-2007 08:00"/>
+
+	<spotPosition id="spot_EUR" currency="EUR" />
+	<spotPosition id="spot_USD" currency="USD" />
+		
+	<spotDeal>
+		<spotRate value="2.2"/>
+		<negociatedPart>
+			<currency value="EUR"/>
+			<amount value="1000.00"/>
+		</negociatedPart>
+		<secondPart>
+			<currency value="USD"/>
+			<amount value="2200.00"/>
+		</secondPart>
+		<rateDirection value="NORMAL"/>
+		<buySellIndicator value="SELL"/>
+		<valueDate value="16-08-2007"/>
+		<tradeDate value="14-08-2007"/>
+		<counterpartyId value="9995"/>
+		<message>This is a test deal entered by RCML.</message>
+		<source value="OFMP"/>
+	</spotDeal>
+	
+	<spotDeal>
+		<spotRate value="2.2"/>
+		<negociatedPart>
+			<currency value="EUR"/>
+			<amount value="1000.00"/>
+		</negociatedPart>
+		<secondPart>
+			<currency value="USD"/>
+			<amount value="2200.00"/>
+		</secondPart>
+		<rateDirection value="NORMAL"/>
+		<buySellIndicator value="SELL"/>
+		<valueDate value="16-08-2007"/>
+		<tradeDate value="14-08-2007"/>
+		<portfolio value="0"/>
+		<counterpartyId value="9995"/>
+		<message>This is a test deal entered by RCML.</message>
+		<source value="OFMP"/>
+	</spotDeal>
+	
+	<assertSpotPosition ref="${spot_EUR}" diff="-2000" />
+	<assertSpotPosition ref="${spot_USD}" diff="4400" />
+</rcml>

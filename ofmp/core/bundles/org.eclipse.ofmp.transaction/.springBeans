@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[2.1.1.v200809020046]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>META-INF/spring/transaction-context.xml</config>
+		<config>META-INF/spring/transaction-osgi-context.xml</config>
+	</configs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

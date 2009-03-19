@@ -1,0 +1,8 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+
+	<table name="BUSINESS_DAY">
+		<column>BUSINESS_DAY</column>
+	</table>
+
+</dataset>

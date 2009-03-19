@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="CurrencyRate">
+	<typeAlias alias="CurrencyRate" type="org.eclipse.ofmp.currency.dom.CurrencyRate"/>
+	<typeAlias alias="CurrencyRateQuery" type="org.eclipse.ofmp.currency.business.CurrencyRateQuery"/>
+	<typeAlias alias="CurrencyHandler" type="org.eclipse.ofmp.currency.dao.handlers.CurrencyTypeHandler"/>
+
+	<resultMap id="CurrencyRate" class="CurrencyRate">
+		<result property="currency"   column="ISOCODE" typeHandler="CurrencyHandler"/>
+		<result property="fixingDate" column="FIXING_DATE"/>
+		<result property="rate"       column="RATE"/>
+		<result property="generation" column="GENERATION"/>
+	</resultMap>
+	
+	<insert id="insertCurrencyRate" parameterClass="CurrencyRate">
+		insert into ${schema}.CURRENCY_RATES (
+			ISOCODE, FIXING_DATE, RATE, GENERATION)
+		values (
+			#currency.ISOCode#, 
+			#fixingDate#,
+			#rate#,
+			0)
+	</insert>
+
+	<insert id="updateCurrencyRate" parameterClass="CurrencyRate">
+		update 
+			${schema}.CURRENCY_RATES
+		set 
+			RATE=#rate#,
+			GENERATION=GENERATION+1
+		where
+			ISOCODE=#currency.ISOCode#
+		and FIXING_DATE=#fixingDate#
+	</insert>
+
+	<select id="selectCurrencyRates" parameterClass="CurrencyRateQuery" resultMap="CurrencyRate">
+		select 
+			ISOCODE, FIXING_DATE, RATE, GENERATION
+		from 
+			${schema}.CURRENCY_RATES
+		where
+			GENERATION >= 0
+		<dynamic>
+			<isParameterPresent>
+				<isNotNull prepend="AND" property="currency">
+					ISOCODE=#currency.ISOCode#
+				</isNotNull>
+
+				<isNotNull prepend="AND" property="fixingDateFrom">
+					FIXING_DATE <![CDATA[ >= ]]> #fixingDateFrom#
+				</isNotNull>
+			
+				<isNotNull prepend="AND" property="fixingDateTo">
+					FIXING_DATE <![CDATA[ <= ]]> #fixingDateTo#
+				</isNotNull>
+			</isParameterPresent>
+		</dynamic>
+			
+	</select>
+
+	<select id="selectNearestLowerCurrencyRate" parameterClass="CurrencyRateQuery" resultMap="CurrencyRate">
+		select 
+			ISOCODE, FIXING_DATE, RATE, GENERATION 
+		from
+			(select * 
+			 from 
+			 	CURRENCY_RATES
+			 where 
+			 	 ISOCODE = #currency.ISOCode#
+			 and FIXING_DATE <![CDATA[ <= ]]> #fixingDateFrom#
+			 order by FIXING_DATE desc)
+		where 
+			rownum = 1
+	</select>
+
+	<select id="selectNearestGreaterCurrencyRate" parameterClass="CurrencyRateQuery" resultMap="CurrencyRate">
+		select 
+			ISOCODE, FIXING_DATE, RATE, GENERATION 
+		from
+			(select * 
+			 from 
+			 	CURRENCY_RATES
+			 where 
+			 	 ISOCODE = #currency.ISOCode#
+			 and FIXING_DATE <![CDATA[ >= ]]> #fixingDateFrom#
+			 order by FIXING_DATE asc)
+		where 
+			rownum = 1
+	</select>
+	
+	<select id="selectLatestCurrencyRate"  parameterClass="CurrencyRateQuery" resultMap="CurrencyRate">
+		select 
+			ISOCODE, FIXING_DATE, RATE, GENERATION 
+		from
+			(select * 
+			 from 
+			 	CURRENCY_RATES
+			 where 
+			 	 ISOCODE = #currency.ISOCode#
+			 order by FIXING_DATE desc)
+		where 
+			rownum = 1
+	</select>
+
+	<delete id="deleteCurrencyRate" parameterClass="java.util.HashMap">
+		delete from ${schema}.CURRENCY_RATES
+		where ISOCODE=#ISOCODE#
+          and FIXING_DATE=#FIXING_DATE#
+	</delete>
+	
+</sqlMap>
