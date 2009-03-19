@@ -9,5 +9,5 @@ It addresses several Financial Markets industry needs:
 The frameworks, components and tools created by this project will be used by vendors, integrators and financial institutions to build tailor-made financial market applications. The components will leverage existing open source financial tools and libraries.
 
 More infos:
-* [http://www.eclipse.org/ofmp http://www.eclipse.org/ofmp]
-* [http://wiki.eclipse.org/OFMP/Release_1.0.0M1 Release_1.0.0M1]
+#[http://www.eclipse.org/ofmp http://www.eclipse.org/ofmp]
+#[http://wiki.eclipse.org/OFMP/Release_1.0.0M1 Release_1.0.0M1]
