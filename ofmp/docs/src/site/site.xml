@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Eclipse OFMP">
+  <bannerLeft>
+    <name>Eclipse-OFMP</name>
+    <src>http://dev.eclipse.org/images/EclipseBannerPic.jpg</src>
+    <href>http://www.eclipse.org/</href>
+  </bannerLeft>
+  <bannerRight>
+    <src>http://dev.eclipse.org/images/eclipse-org.GIF</src>
+  </bannerRight>
+  <body>
+    <links>
+      <item name="Eclipse" href="http://www.eclipse.org/"/>
+      <item name="Eclipse OFMP" href="http://www.eclipse.org/ofmp"/>
+    </links>
+
+    <menu name="Eclipse OFMP">
+      <item name="Introduction" href="index.html"/>
+      <item name="Proposal" href="http://www.eclipse.org/proposals/ofmp/"/>
+    </menu>
+
+    ${reports}
+
+  </body>
+</project>

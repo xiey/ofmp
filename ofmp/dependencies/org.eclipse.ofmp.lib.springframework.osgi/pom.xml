@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>ofmp-dependencies-module</artifactId>
+		<groupId>org.eclipse.ofmp</groupId>
+		<version>1.0.0-M1</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.ofmp</groupId>
+	<artifactId>org.eclipse.ofmp.lib.springframework.osgi</artifactId>
+	<packaging>pom</packaging>
+    <name>Eclipse OFMP Spring DM libs</name>
+	<version>${spring.osgi.version}</version>
+	
+	<dependencies>
+        <!-- Spring-DM -->
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.core</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.io</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.extender</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.web</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.web.extender</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.extensions.annotation</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.test</artifactId>
+			<version>${spring.osgi.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

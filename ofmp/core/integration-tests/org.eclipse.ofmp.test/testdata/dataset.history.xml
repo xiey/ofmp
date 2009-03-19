@@ -1,0 +1,51 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+
+	<table name="HISTORY">
+		<column>ID</column>
+		<column>TAG</column>
+		<column>REFERENCE</column>
+		<column>TIMESTAMP</column>
+		<column>MESSAGE</column>
+		<column>OSUSER</column>
+		<column>USER_ID</column>
+		<column>USER_NAME</column>
+
+		<row>
+			<value>1000</value>
+			<value>DEALS</value>
+			<value>9991</value>
+			<value>2007-01-18</value>
+			<value>Deal has been created</value>
+			<value>ofmp-fx-dealer</value>
+			<value>1</value>
+			<value>Dealer</value>
+		</row>
+
+		<row>
+			<value>1001</value>
+			<value>POSITIONS</value>
+			<value>/pf_root/pf_fx/pf_fx_spot@USD</value>
+			<value>2008-06-16</value>
+			<value>Position has been created</value>
+			<value>$HistoryPositionListener</value>
+			<null/>
+			<value>HistoryPositionListener</value>
+		</row>
+		
+	</table>
+
+	<table name="HISTORY_CAUSE">
+		<column>ID</column>
+		<column>CAUSE</column>
+		<column>CAUSE_ID</column>
+
+		<row>
+			<value>1001</value>
+			<value>DEAL</value>
+			<value>9991</value>
+		</row>
+
+	</table>
+
+</dataset>

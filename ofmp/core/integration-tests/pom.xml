@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>org.eclipse.ofmp</groupId>
+    <artifactId>ofmp-core-module</artifactId>
+    <version>1.0.0-M1</version>
+  </parent>
+  <properties>
+	  <eclipse.target.area>${project.root}/../../../runtime/server/core-runtime/plugins/eclipse_plugins</eclipse.target.area>
+  </properties>
+  
+  
+  
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.eclipse.ofmp</groupId>
+  <artifactId>ofmp-core-integration-tests-module</artifactId>
+  <packaging>pom</packaging>
+  <name>Eclipse OFMP Core Integration Tests Module</name>
+  <modules>
+  	<module>org.eclipse.ofmp.test</module>
+  	<module>org.eclipse.ofmp.test.integrationtests</module>
+  	<module>org.eclipse.ofmp.security.integrationtests</module>
+  	<module>org.eclipse.ofmp.currency.integrationtests</module>
+  </modules>
+  
+  <build>
+  <plugins>
+       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.4.2</version>
+        <configuration>
+          <systemProperties>
+            <property>
+              <name>eclipse.target.area</name>
+              <value>${eclipse.target.area}</value>
+            </property>
+          </systemProperties>
+        </configuration>
+      </plugin>
+  </plugins>
+  </build>
+</project>

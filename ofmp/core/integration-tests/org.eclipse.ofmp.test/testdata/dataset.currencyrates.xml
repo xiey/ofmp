@@ -1,0 +1,425 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+
+	<table name="CURRENCY_RATES">
+		<column>ISOCODE</column>
+		<column>FIXING_DATE</column>
+		<column>RATE</column>
+
+		<!-- FIXING_DATE = 2007-03-20 -->
+		<row>
+			<value>AUD</value>
+			<value>2007-03-20</value>
+			<value>1.6401</value>
+		</row>
+
+		<row>
+			<value>USD</value>
+			<value>2007-03-20</value>
+			<value>1.31</value>
+		</row>
+
+		<!-- FIXING_DATE = 2007-03-23 -->
+		<row>
+			<value>AUD</value>
+			<value>2007-03-23</value>
+			<value>1.6494</value>
+		</row>
+
+		<row>
+			<value>BGN</value>
+			<value>2007-03-23</value>
+			<value>1.95585</value>
+		</row>
+
+		<row>
+			<value>CAD</value>
+			<value>2007-03-23</value>
+			<value>1.54285</value>
+		</row>
+
+		<row>
+			<value>CHF</value>
+			<value>2007-03-23</value>
+			<value>1.6189</value>
+		</row>
+
+		<row>
+			<value>CZK</value>
+			<value>2007-03-23</value>
+			<value>27.968</value>
+		</row>
+
+		<row>
+			<value>DKK</value>
+			<value>2007-03-23</value>
+			<value>7.45005</value>
+		</row>
+
+		<row>
+			<value>GBP</value>
+			<value>2007-03-23</value>
+			<value>0.67755</value>
+		</row>
+
+		<row>
+			<value>HKD</value>
+			<value>2007-03-23</value>
+			<value>10.3862</value>
+		</row>
+
+		<row>
+			<value>HUF</value>
+			<value>2007-03-23</value>
+			<value>246.05</value>
+		</row>
+
+		<row>
+			<value>ISK</value>
+			<value>2007-03-23</value>
+			<value>88.565</value>
+		</row>
+
+		<row>
+			<value>ISV</value>
+			<value>2007-03-23</value>
+			<value>0.7348</value>
+		</row>
+
+		<row>
+			<value>JPY</value>
+			<value>2007-03-23</value>
+			<value>156.835</value>
+		</row>
+
+		<row>
+			<value>NOK</value>
+			<value>2007-03-23</value>
+			<value>8.1305</value>
+		</row>
+
+		<row>
+			<value>NZD</value>
+			<value>2007-03-23</value>
+			<value>1.86645</value>
+		</row>
+
+		<row>
+			<value>PLN</value>
+			<value>2007-03-23</value>
+			<value>3.869</value>
+		</row>
+
+		<row>
+			<value>SEK</value>
+			<value>2007-03-23</value>
+			<value>9.3014</value>
+		</row>
+
+		<row>
+			<value>SGD</value>
+			<value>2007-03-23</value>
+			<value>2.0178</value>
+		</row>
+
+		<row>
+			<value>THB</value>
+			<value>2007-03-23</value>
+			<value>46.4625</value>
+		</row>
+
+		<row>
+			<value>TRY</value>
+			<value>2007-03-23</value>
+			<value>1.88965</value>
+		</row>
+
+		<row>
+			<value>USD</value>
+			<value>2007-03-23</value>
+			<value>1.32955</value>
+		</row>
+
+		<row>
+			<value>ZAR</value>
+			<value>2007-03-23</value>
+			<value>9.6036</value>
+		</row>
+
+		<!-- FIXING_DATE = 2007-03-24 -->
+		<row>
+			<value>AUD</value>
+			<value>2007-03-24</value>
+			<value>1.6501</value>
+		</row>
+
+		<row>
+			<value>BGN</value>
+			<value>2007-03-24</value>
+			<value>1.95592</value>
+		</row>
+
+		<row>
+			<value>CAD</value>
+			<value>2007-03-24</value>
+			<value>1.54271</value>
+		</row>
+
+		<row>
+			<value>CHF</value>
+			<value>2007-03-24</value>
+			<value>1.6211</value>
+		</row>
+
+		<row>
+			<value>CZK</value>
+			<value>2007-03-24</value>
+			<value>27.857</value>
+		</row>
+
+		<row>
+			<value>DKK</value>
+			<value>2007-03-24</value>
+			<value>7.44120</value>
+		</row>
+
+		<row>
+			<value>GBP</value>
+			<value>2007-03-24</value>
+			<value>0.67512</value>
+		</row>
+
+		<row>
+			<value>HKD</value>
+			<value>2007-03-24</value>
+			<value>10.4150</value>
+		</row>
+
+		<row>
+			<value>HUF</value>
+			<value>2007-03-24</value>
+			<value>247.08</value>
+		</row>
+
+		<row>
+			<value>ISK</value>
+			<value>2007-03-24</value>
+			<value>89.635</value>
+		</row>
+
+		<row>
+			<value>ISV</value>
+			<value>2007-03-24</value>
+			<value>0.7215</value>
+		</row>
+
+		<row>
+			<value>JPY</value>
+			<value>2007-03-24</value>
+			<value>156.987</value>
+		</row>
+
+		<row>
+			<value>NOK</value>
+			<value>2007-03-24</value>
+			<value>8.1205</value>
+		</row>
+
+		<row>
+			<value>NZD</value>
+			<value>2007-03-24</value>
+			<value>1.86587</value>
+		</row>
+
+		<row>
+			<value>PLN</value>
+			<value>2007-03-24</value>
+			<value>3.802</value>
+		</row>
+
+		<row>
+			<value>SEK</value>
+			<value>2007-03-24</value>
+			<value>9.3122</value>
+		</row>
+
+		<row>
+			<value>SGD</value>
+			<value>2007-03-24</value>
+			<value>1.9987</value>
+		</row>
+
+		<row>
+			<value>THB</value>
+			<value>2007-03-24</value>
+			<value>46.3215</value>
+		</row>
+
+		<row>
+			<value>TRY</value>
+			<value>2007-03-24</value>
+			<value>1.89125</value>
+		</row>
+
+		<row>
+			<value>USD</value>
+			<value>2007-03-24</value>
+			<value>1.32815</value>
+		</row>
+
+		<row>
+			<value>ZAR</value>
+			<value>2007-03-24</value>
+			<value>9.7021</value>
+		</row>
+
+		<!-- FIXING_DATE = 2007-03-25 -->
+		<row>
+			<value>AUD</value>
+			<value>2007-03-25</value>
+			<value>1.6601</value>
+		</row>
+
+		<row>
+			<value>BGN</value>
+			<value>2007-03-25</value>
+			<value>1.96592</value>
+		</row>
+
+		<row>
+			<value>CAD</value>
+			<value>2007-03-25</value>
+			<value>1.54371</value>
+		</row>
+
+		<row>
+			<value>CHF</value>
+			<value>2007-03-25</value>
+			<value>1.6221</value>
+		</row>
+
+		<row>
+			<value>CZK</value>
+			<value>2007-03-25</value>
+			<value>27.858</value>
+		</row>
+
+		<row>
+			<value>DKK</value>
+			<value>2007-03-25</value>
+			<value>7.44135</value>
+		</row>
+
+		<row>
+			<value>GBP</value>
+			<value>2007-03-25</value>
+			<value>0.67689</value>
+		</row>
+
+		<row>
+			<value>HKD</value>
+			<value>2007-03-25</value>
+			<value>10.40125</value>
+		</row>
+
+		<row>
+			<value>HUF</value>
+			<value>2007-03-25</value>
+			<value>247.01</value>
+		</row>
+
+		<row>
+			<value>ISK</value>
+			<value>2007-03-25</value>
+			<value>89.621</value>
+		</row>
+
+		<row>
+			<value>ISV</value>
+			<value>2007-03-25</value>
+			<value>0.7257</value>
+		</row>
+
+		<row>
+			<value>JPY</value>
+			<value>2007-03-25</value>
+			<value>156.968</value>
+		</row>
+
+		<row>
+			<value>NOK</value>
+			<value>2007-03-25</value>
+			<value>8.1201</value>
+		</row>
+
+		<row>
+			<value>NZD</value>
+			<value>2007-03-25</value>
+			<value>1.86457</value>
+		</row>
+
+		<row>
+			<value>PLN</value>
+			<value>2007-03-25</value>
+			<value>3.758</value>
+		</row>
+
+		<row>
+			<value>SEK</value>
+			<value>2007-03-25</value>
+			<value>9.3012</value>
+		</row>
+
+		<row>
+			<value>SGD</value>
+			<value>2007-03-25</value>
+			<value>1.9874</value>
+		</row>
+
+		<row>
+			<value>THB</value>
+			<value>2007-03-25</value>
+			<value>46.3124</value>
+		</row>
+
+		<row>
+			<value>TRY</value>
+			<value>2007-03-25</value>
+			<value>1.89245</value>
+		</row>
+
+		<row>
+			<value>USD</value>
+			<value>2007-03-25</value>
+			<value>1.32857</value>
+		</row>
+
+		<row>
+			<value>ZAR</value>
+			<value>2007-03-25</value>
+			<value>9.7031</value>
+		</row>
+
+		<!-- FIXING_DATE = 2007-03-28 -->
+		<row>
+			<value>USD</value>
+			<value>2007-03-28</value>
+			<value>1.33458</value>
+		</row>
+
+		<!-- FIXING_DATE = 2007-06-21 -->
+		<row>
+			<value>JPY</value>
+			<value>2007-06-21</value>
+			<value>157</value>
+		</row>
+
+		<!-- FIXING_DATE = 2007-06-23 -->
+		<row>
+			<value>USD</value>
+			<value>2007-06-23</value>
+			<value>1.3314</value>
+		</row>
+	</table>
+
+</dataset>

@@ -1,0 +1,126 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+
+	<table name="REFERENCE_POSITION">
+		<column>ID</column>
+		<column>CREATION_DATE</column>
+		<column>TYPE</column>
+		<column>SOURCE</column>
+		<column>CURRENCY</column>
+		<column>NOSTRO_ACCOUNT</column>
+		<column>VALUE</column>
+		
+		<row>
+			<value>10000</value>
+			<value>2008-03-21</value>
+			<value>FX_SPOT</value>
+			<value>BACKOFFICE</value>
+			<value>USD</value>
+			<null />
+			<value>1000000</value>
+		</row>
+		
+		<row>
+			<value>10001</value>
+			<value>2008-03-21</value>
+			<value>FX_SPOT</value>
+			<value>BACKOFFICE</value>
+			<value>JPY</value>
+			<null />
+			<value>9000000</value>
+		</row>		
+
+		<row>
+			<value>10002</value>
+			<value>2008-03-22</value>
+			<value>MM_T0</value>
+			<value>MANUAL_INPUT</value>
+			<value>CAD</value>
+			<value>1</value>
+			<value>6500000</value>
+		</row>		
+	</table>		
+
+	<table name="POSITION_CORRECTION">
+		<column>ID</column>	
+		<column>GENERATION</column>
+		<column>CREATION_DATE</column>
+		<column>DEALER</column>
+		<column>MESSAGE</column>
+		<column>REFERENCE_POSITION</column>
+		<column>KEY_TYPE</column>
+		
+		<row>
+			<value>50000</value>
+			<value>0</value>
+			<value>2008-02-13</value>
+			<null />
+			<value>Correction of today's FX Spot USD Position after comparison with BackOffice</value>
+			<value>10000</value>
+			<value>PER_CURRENCY</value>
+		</row>
+		
+		<row>
+			<value>50001</value>
+			<value>0</value>
+			<value>2008-02-14</value>
+			<value>1</value>
+			<value>Correction of today's MM T0 CAD Position</value>
+			<null />
+			<value>PER_CURRENCY_VALUEDATE_CTPY</value>
+		</row>
+		
+	</table>		
+
+	<table name="ATOMIC_POSITION">
+		<column>ID</column>
+		<column>DEAL</column>
+		<column>POSITION_CORRECTION</column>
+		<column>DESK</column>
+		<column>PRODUCT</column>
+		<column>COUNTERPARTY</column>
+		<column>TRADE_DATE</column>
+		<column>VALUE_DATE</column>
+		<column>BUSINESS_LINE</column>
+		<column>HOLDER</column>
+		<column>STATUS</column>
+		<column>AMOUNT</column>
+		<column>CURRENCY</column>
+		<column>SECOND_CURRENCY</column>
+		
+		<row>
+			<value>60000</value>
+			<null />
+			<value>50000</value>
+			<value>FX</value>
+			<null />
+			<null />
+			<value>2008-02-13</value>
+			<value>2008-02-13</value>
+			<value>DEFAULT</value>
+			<null />
+			<null />
+			<value>1000000</value>
+			<value>USD</value>
+			<null />
+		</row>
+
+		<row>
+			<value>60001</value>
+			<null />
+			<value>50001</value>
+			<value>MM</value>
+			<null />
+			<value>9994</value>
+			<value>2008-02-14</value>
+			<value>2008-02-14</value>
+			<value>DEFAULT</value>
+			<null />
+			<null />
+			<value>2000000</value>
+			<value>CAD</value>
+			<null />
+		</row>
+	</table>		
+		
+</dataset>

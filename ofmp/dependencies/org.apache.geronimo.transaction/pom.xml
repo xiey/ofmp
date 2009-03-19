@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>org.eclipse.ofmp</groupId>
+		<artifactId>ofmp-dependencies-module</artifactId>
+		<version>1.0.0-M1</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.ofmp</groupId>
+	<artifactId>org.apache.geronimo.transaction</artifactId>
+	<version>1.0.0</version>
+	<name>Apache Geronimo Transaction library</name>
+	<packaging>jar</packaging>
+	
+	<dependencies>
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>com.springsource.javax.transaction</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.emory.mathcs.backport</groupId>
+			<artifactId>com.springsource.edu.emory.mathcs.backport</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>com.springsource.slf4j.org.apache.commons.logging</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.resource</groupId>
+			<artifactId>com.springsource.javax.resource</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<classesDirectory>classes/</classesDirectory>
+					<archive>
+						<manifestFile>META-INF/MANIFEST.MF</manifestFile>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+            			<!-- here the phase you need -->
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/classes</outputDirectory>
+							<resources>
+								<resource>
+									<directory>classes</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

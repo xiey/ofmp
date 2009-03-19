@@ -1,0 +1,87 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+	<table name="BACKOFFICE_DEAL">
+		<column>ID</column>
+		<column>TYPE</column>
+		<column>ORDER_REF</column>
+		<column>TRANSACTION_REF</column>
+		<column>EXECUTION_DATE</column>
+		<column>ACCOUNT_MANAGER_ID</column>
+		<column>ACCOUNT_MANAGER_FEE</column>
+
+		<row>
+			<value>19003</value>
+			<value>DEALER</value>
+			<value>20070131-1-000001</value>
+			<value>20070131-1-900001</value>
+			<value>2007-01-31</value>
+		</row>
+
+		<row>
+			<value>19004</value>
+			<value>DEALER</value>
+			<value>20070131-0-APSORDER0</value>
+			<value>20070131-0-APSTX0</value>
+			<value>2007-01-31</value>
+		</row>
+		
+		<row>
+			<value>19001</value>
+			<value>ACCOUNT_MANAGER</value>
+			<value>20070621-1-000002</value>
+			<value>20070621-1-900002</value>
+			<value>2007-06-21</value>
+			<value>Thorgal</value>
+			<value>0.1</value>
+		</row>
+		
+		<row>
+			<value>19002</value>
+			<value>ACCOUNT_MANAGER</value>
+			<value>20070621-1-000003</value>
+			<value>20070621-1-900003</value>
+			<value>2007-06-23</value>
+			<value>Heinar</value>
+			<value>0.04</value>
+		</row>
+	</table>
+
+	<table name="BACKOFFICE_SCHEDULE">
+		<column>DEAL</column>
+		<column>ORDER_REF</column>
+		<column>STATUS</column>
+		<column>SCHEDULE_DATE</column>
+
+		<row>
+			<value>9998</value>
+			<value>20060813-1-000001</value>
+			<value>ERROR</value>
+			<value>2006-08-12</value>
+		</row>
+	</table>
+
+	<table name="BACKOFFICE_ERROR_MESSAGE">
+		<column>ID</column>
+		<column>DEAL</column>
+		<column>ERROR_TYPE</column>
+		<column>ERROR_CODE</column>
+		<column>LABEL</column>
+
+		<row>
+			<value>10000</value>
+			<value>9998</value>
+			<value>1</value>
+			<value>ERROR1</value>
+			<value>THIS IS A FIRST ERROR</value>
+		</row>
+		
+		<row>
+			<value>10001</value>
+			<value>9998</value>
+			<value>1</value>
+			<value>ERROR2</value>
+			<value>THIS IS A SECOND ERROR</value>
+		</row>
+	</table>
+
+</dataset>

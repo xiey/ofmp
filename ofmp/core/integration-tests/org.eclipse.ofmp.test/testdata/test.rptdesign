@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Eclipse BIRT 2.0 -->
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.6" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.1.2.v20070205-1728 Build &lt;20070205-1728></property>
+    <property name="units">cm</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">ofmp.rptlibrary</property>
+            <property name="namespace">ofmp</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="dealId" id="698" extends="ofmp.dealId"/>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="OFMP" id="662"
+ extends="ofmp.OFMP"/>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DEALS" id="681"
+ extends="ofmp.DEALS"/>
+    </data-sets>
+    <styles>
+        <style name="Deal" id="754">
+            <structure name="dateTimeFormat">
+                <property name="category">Custom</property>
+                <property name="pattern">dd/MM/yy hh:mm</property>
+            </structure>
+        </style>
+        <style name="Label" id="799">
+            <property name="fontWeight">bold</property>
+            <property name="fontStyle">normal</property>
+            <property name="marginTop">0mm</property>
+        </style>
+        <style name="Header" id="836">
+            <property name="fontSize">larger</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">1mm</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="OFMP" id="707" extends="ofmp.OFMP">
+            <overridden-values>
+                <ref-entry baseId="69" name="NewGrid"/>
+                <ref-entry baseId="73" name="NewImage"/>
+            </overridden-values>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="720">
+            <property name="style">Deal</property>
+            <property name="width">100%</property>
+            <property name="dataSet">DEALS</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">TRADE_DATE</property>
+                    <expression name="expression">dataSetRow["TRADE_DATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">CREATE_DATE</property>
+                    <expression name="expression">dataSetRow["CREATE_DATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">STATUS</property>
+                    <expression name="expression">dataSetRow["STATUS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PRODUCT</property>
+                    <expression name="expression">dataSetRow["PRODUCT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DEALER</property>
+                    <expression name="expression">dataSetRow["DEALER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">SWAP_TYPE</property>
+                    <expression name="expression">dataSetRow["SWAP_TYPE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COUNTERPARTY</property>
+                    <expression name="expression">dataSetRow["COUNTERPARTY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RATE_DIRECTION</property>
+                    <expression name="expression">dataSetRow["RATE_DIRECTION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BUY_SELL</property>
+                    <expression name="expression">dataSetRow["BUY_SELL"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ID</property>
+                    <expression name="expression">dataSetRow["ID"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="727"/>
+            <detail>
+                <row id="723">
+                    <cell id="724">
+                        <grid id="728">
+                            <property name="height">1.3958333333in</property>
+                            <property name="width">9.1041666667in</property>
+                            <column id="729">
+                                <property name="width">2.0208333333in</property>
+                            </column>
+                            <column id="730">
+                                <property name="width">1.7708333333in</property>
+                            </column>
+                            <column id="782">
+                                <property name="width">1.8020833333in</property>
+                            </column>
+                            <column id="731">
+                                <property name="width">3.6979166667in</property>
+                            </column>
+                            <row id="817">
+                                <property name="height">0.3229166667in</property>
+                                <cell id="818">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <grid id="822">
+                                        <property name="width">100%</property>
+                                        <column id="823">
+                                            <property name="width">0.6666666667in</property>
+                                        </column>
+                                        <column id="824">
+                                            <property name="width">2.96875in</property>
+                                        </column>
+                                        <row id="825">
+                                            <cell id="826">
+                                                <label id="828">
+                                                    <property name="style">Label</property>
+                                                    <text-property name="text">Deal ID:</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="827">
+                                                <data id="829">
+                                                    <property name="resultSetColumn">ID</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="820"/>
+                                <cell id="821"/>
+                            </row>
+                            <row id="837">
+                                <property name="height">0.28125in</property>
+                                <property name="style">Label</property>
+                                <cell id="838"/>
+                                <cell id="839"/>
+                                <cell id="840"/>
+                                <cell id="841"/>
+                            </row>
+                            <row id="830">
+                                <property name="height">0.375in</property>
+                                <property name="style">Label</property>
+                                <cell id="831">
+                                    <property name="colSpan">4</property>
+                                    <property name="rowSpan">1</property>
+                                    <label id="835">
+                                        <property name="style">Header</property>
+                                        <text-property name="text">General</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="732">
+                                <property name="height">0.6041666667in</property>
+                                <cell id="733">
+                                    <grid id="745">
+                                        <property name="width">100%</property>
+                                        <column id="746"/>
+                                        <row id="747">
+                                            <cell id="748">
+                                                <label id="751">
+                                                    <property name="style">Label</property>
+                                                    <text-property name="text">Trade Date</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                        <row id="749">
+                                            <cell id="750">
+                                                <data id="753">
+                                                    <property name="style">Deal</property>
+                                                    <structure name="dateTimeFormat">
+                                                        <property name="category">Unformatted</property>
+                                                    </structure>
+                                                    <property name="resultSetColumn">TRADE_DATE</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="734">
+                                    <grid id="763">
+                                        <property name="width">100%</property>
+                                        <column id="764"/>
+                                        <row id="765">
+                                            <cell id="766">
+                                                <label id="769">
+                                                    <property name="style">Label</property>
+                                                    <text-property name="text">Status</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                        <row id="767">
+                                            <cell id="768">
+                                                <data id="777">
+                                                    <property name="resultSetColumn">STATUS</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="779">
+                                    <grid id="783">
+                                        <property name="width">100%</property>
+                                        <column id="784"/>
+                                        <row id="785">
+                                            <cell id="786">
+                                                <label id="795">
+                                                    <property name="style">Label</property>
+                                                    <text-property name="text">Dealer</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                        <row id="787">
+                                            <cell id="788">
+                                                <data id="797">
+                                                    <property name="resultSetColumn">DEALER</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="735">
+                                    <grid id="800">
+                                        <property name="width">100%</property>
+                                        <column id="801"/>
+                                        <row id="802">
+                                            <cell id="803">
+                                                <label id="812">
+                                                    <property name="style">Label</property>
+                                                    <text-property name="text">Counterparty</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                        <row id="804">
+                                            <cell id="805">
+                                                <data id="814">
+                                                    <property name="resultSetColumn">COUNTERPARTY</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                            </row>
+                            <row id="736">
+                                <property name="height">0.6979166667in</property>
+                                <cell id="737">
+                                    <grid id="755">
+                                        <property name="width">100%</property>
+                                        <column id="756"/>
+                                        <row id="757">
+                                            <cell id="758">
+                                                <label id="761">
+                                                    <property name="style">Label</property>
+                                                    <text-property name="text">Create Date</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                        <row id="759">
+                                            <cell id="760">
+                                                <data id="762">
+                                                    <property name="style">Deal</property>
+                                                    <property name="resultSetColumn">CREATE_DATE</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="738">
+                                    <grid id="770">
+                                        <property name="width">100%</property>
+                                        <column id="771"/>
+                                        <row id="772">
+                                            <cell id="773">
+                                                <label id="776">
+                                                    <property name="style">Label</property>
+                                                    <text-property name="text">Product</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                        <row id="774">
+                                            <cell id="775">
+                                                <data id="778">
+                                                    <property name="resultSetColumn">PRODUCT</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="780">
+                                    <grid id="789">
+                                        <property name="width">100%</property>
+                                        <column id="790"/>
+                                        <row id="791">
+                                            <cell id="792">
+                                                <label id="796">
+                                                    <property name="style">Label</property>
+                                                    <text-property name="text">Swap Type</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                        <row id="793">
+                                            <cell id="794">
+                                                <data id="798">
+                                                    <property name="resultSetColumn">SWAP_TYPE</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="739">
+                                    <grid id="806">
+                                        <property name="width">100%</property>
+                                        <column id="807"/>
+                                        <row id="808">
+                                            <cell id="809">
+                                                <label id="813">
+                                                    <property name="style">Label</property>
+                                                    <text-property name="text">Buy/Sell</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                        <row id="810">
+                                            <cell id="811">
+                                                <data id="816">
+                                                    <property name="resultSetColumn">BUY_SELL</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                            </row>
+                            <row id="740">
+                                <property name="height">0.9166666667in</property>
+                                <cell id="741"/>
+                                <cell id="742"/>
+                                <cell id="781"/>
+                                <cell id="743"/>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

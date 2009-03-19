@@ -1,0 +1,48 @@
+Manifest-Version: 1.0
+Built-By: Fred
+Created-By: Apache Maven Bundle Plugin
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Import-Package: com.ibatis.sqlmap.client;version="2.3.0.677",jcifs;ver
+ sion="1.2",jcifs.smb;version="1.2",org.aopalliance.aop;version="1.0",
+ org.apache.commons.lang.builder;version="2.1",org.apache.log4j;versio
+ n="1.2",org.eclipse.ofmp.common.dao.ibatis.handlers;version="1.0.0.M1
+ ",org.eclipse.ofmp.common.dom;version="1.0.0.M1",org.eclipse.ofmp.sec
+ urity.business;version="1.0.0.M1",org.eclipse.ofmp.security.dao;versi
+ on="1.0.0.M1",org.eclipse.ofmp.security.dom;version="1.0.0.M1",org.sp
+ ringframework.beans.factory.annotation;version="2.5.5.A",org.springfr
+ amework.beans.factory.config;version="2.5.5.A",org.springframework.or
+ m.ibatis;version="2.5.5.A",org.springframework.orm.ibatis.support;ver
+ sion="2.5.5.A",org.springframework.security;version="2.0.0.A",org.spr
+ ingframework.security.annotation;version="2.0.0.A",org.springframewor
+ k.security.context;version="2.0.0.A",org.springframework.security.int
+ ercept;version="2.0.0.A",org.springframework.security.intercept.metho
+ d.aopalliance;version="2.0.0.A",org.springframework.security.provider
+ s;version="2.0.0.A",org.springframework.security.vote;version="2.0.0.
+ A"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bnd-LastModified: 1237471031046
+Export-Package: org.eclipse.ofmp.security.dao;uses:="org.eclipse.ofmp.
+ security.dom";version="1.0.0.M1",org.eclipse.ofmp.security.business;u
+ ses:="org.springframework.security,org.springframework.security.conte
+ xt,org.springframework.security.providers,org.eclipse.ofmp.security.d
+ om";version="1.0.0.M1",org.eclipse.ofmp.security.dom;uses:="org.eclip
+ se.ofmp.common.dom,org.apache.commons.lang.builder";version="1.0.0.M1
+ "
+Bundle-Version: 1.0.0.M1
+Ignore-Package: org.eclipse.ofmp.security.dao.internal.mappings,org.ec
+ lipse.ofmp.security.business.internal,org.eclipse.ofmp.security.dao.i
+ nternal,org.eclipse.ofmp.security.dao.internal.mappings.handlers
+Bundle-Name: Eclipse OFMP Security Bundle (Incubation)
+Bundle-Description: The OFMP project's goal is to build an extensible,
+  component-based Financial Market Platform based on industry business
+  requirements and state of the art technologies.
+Build-Jdk: 1.5.0_12
+Private-Package: org.eclipse.ofmp.security.business.internal,org.eclip
+ se.ofmp.security.dao.internal,org.eclipse.ofmp.security.dao.internal.
+ mappings,org.eclipse.ofmp.security.dao.internal.mappings.handlers
+Bundle-DocURL: http://www.eclipse.org/ofmp
+Bundle-Vendor: Eclipse OFMP
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.ofmp.security
+Tool: Bnd-0.0.255
+

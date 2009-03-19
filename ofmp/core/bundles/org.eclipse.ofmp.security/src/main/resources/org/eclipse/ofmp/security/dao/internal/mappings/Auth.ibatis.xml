@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Auth">
+	<typeAlias alias="User" type="org.eclipse.ofmp.security.dom.User"/>
+	<typeAlias alias="Dealer" type="org.eclipse.ofmp.security.dom.Dealer"/>
+
+	<typeAlias alias="myBooleanTypeHandler" type="org.eclipse.ofmp.common.dao.ibatis.handlers.BooleanTypeHandler"/>
+
+	<resultMap id="User" class="User">
+		<result property="id" column="ID"/>
+		<result property="name" column="NAME"/>
+		<result property="OSUser"    column="OSUSER"/>
+		<result property="enabled"		column="ENABLED" typeHandler="myBooleanTypeHandler"/>
+	</resultMap>
+	
+	<resultMap id="Dealer" class="Dealer">
+		<result property="id" column="ID"/>
+		<result property="generation"	column="GENERATION"/>
+	</resultMap>
+
+	<select id="findUserByLogin" resultMap="User" parameterClass="java.lang.String">
+		select 
+			ID, NAME, OSUSER, ENABLED
+		from 
+			${schema}.USERS
+		where 
+			OSUSER=#value#
+	</select>
+
+	<select id="selectUserRoles" parameterClass="java.lang.Integer" resultClass="java.lang.String">
+		select ROLE as value
+		from ${schema}.ROLE
+		where USR = #value#
+	</select>
+	
+	<select id="lookup_Dealers" resultMap="Dealer">
+		select 
+			ID, GENERATION
+		from 
+			${schema}.DEALER
+	</select>
+</sqlMap>

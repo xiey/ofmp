@@ -1,0 +1,145 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>ofmp-core-bundles-module</artifactId>
+    <groupId>org.eclipse.ofmp</groupId>
+    <version>1.0.0-M1</version>
+  </parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>org.eclipse.ofmp.security</artifactId>
+	<packaging>bundle</packaging>
+	<name>Eclipse OFMP Security Bundle</name>
+	<version>1.0.0-M1</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>org.eclipse.ofmp.lib.springframework</artifactId>
+			<type>pom</type>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>org.eclipse.ofmp.lib.springframework.security</artifactId>
+			<type>pom</type>
+			<version>${spring.security.version}</version>
+		</dependency>
+	
+        <!-- DAO dependencies -->
+        <dependency>
+        	<groupId>org.apache.ibatis</groupId>
+        	<artifactId>com.springsource.com.ibatis</artifactId>
+        	<version>2.3.0.677</version>
+        </dependency>
+        <dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>com.oracle.ojdbc</artifactId>
+			<version>10.2.0</version>
+			<scope>runtime</scope>
+		</dependency>
+        
+        <!-- Security dependencies -->
+        <dependency>
+        	<groupId>org.samba.jcifs</groupId>
+        	<artifactId>com.springsource.jcifs</artifactId>
+        	<version>1.2.15</version>
+        </dependency>
+        
+        <!-- OFMP dependencies -->
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>org.eclipse.ofmp.common</artifactId>
+			<version>1.0.0-M1</version>
+		</dependency>
+		
+        <!-- Other dependencies -->
+        <dependency>
+        	<groupId>org.aspectj</groupId>
+        	<artifactId>com.springsource.org.aspectj.runtime</artifactId>
+        	<version>1.6.1</version>
+        </dependency>
+
+		<dependency>
+			<groupId>org.aopalliance</groupId>
+			<artifactId>com.springsource.org.aopalliance</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+        <!-- Test dependencies -->
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.extensions.annotation</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<!-- for packaging as an OSGi bundle, we use the maven-bundle-plugin -->
+
+	<!-- see http://felix.apache.org/site/maven-bundle-plugin-bnd.html for more info -->
+	<build>
+		<resources>
+			<!-- standard Maven folder -->
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<!-- plus root folder -->
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>META-INF/*</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<version>1.4.3</version>
+				<configuration>
+					<manifestLocation>META-INF</manifestLocation>
+					<instructions>
+						<Bundle-Name>${project.name} (Incubation)</Bundle-Name>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Export-Package>!${project.artifactId}.business.internal.*,
+						                !${project.artifactId}.dao.internal.*,
+						                 ${project.artifactId}.*;version="${project.version}"</Export-Package>
+						<Import-Package>*,org.springframework.beans.factory.config;version="${spring.version}",
+										  org.springframework.orm.ibatis;version="${spring.version}",
+										  org.springframework.security.intercept;version="${spring.security.version}",
+										  org.springframework.security.intercept.method.aopalliance;version="${spring.security.version}",
+										  org.springframework.security.providers;version="${spring.security.version}",
+										  org.springframework.security.annotation;version="${spring.security.version}",
+										  org.springframework.security.vote;version="${spring.security.version}",
+										  org.aopalliance.aop
+				        </Import-Package>
+						<Private-Package>${project.artifactId}.business.internal.*,
+						                 ${project.artifactId}.dao.internal.*
+						</Private-Package>
+						<Bundle-RequiredExecutionEnvironment>J2SE-1.5</Bundle-RequiredExecutionEnvironment>
+						<Include-Resource>src/main/resources</Include-Resource>
+					</instructions>
+				</configuration>
+			</plugin>
+
+			<!-- generate manifest automatically once the classes are processed -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>

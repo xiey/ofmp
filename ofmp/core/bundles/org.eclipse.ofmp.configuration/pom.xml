@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>ofmp-core-bundles-module</artifactId>
+		<groupId>org.eclipse.ofmp</groupId>
+		<version>1.0.0-M1</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>org.eclipse.ofmp.configuration</artifactId>
+	<name>Eclipse OFMP Configuration bundle</name>
+	<version>1.0.0-M1</version>
+	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.osgi</groupId>
+			<artifactId>org.eclipse.osgi</artifactId>
+			<version>${equinox.ver}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.osgi</groupId>
+			<artifactId>org.eclipse.equinox.cm</artifactId>
+			<version>1.0.0.v20080509-1800</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.log4j</groupId>
+			<artifactId>com.springsource.org.apache.log4j</artifactId>
+			<version>1.2.15</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<archive>
+						<manifestFile>META-INF/MANIFEST.MF</manifestFile>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

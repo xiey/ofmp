@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>ofmp-dependencies-module</artifactId>
+    <groupId>org.eclipse.ofmp</groupId>
+    <version>1.0.0-M1</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.eclipse.ofmp</groupId>
+  <artifactId>org.eclipse.ofmp.lib.springframework.security</artifactId>
+  <name>Eclipse OFMP Spring Security libs</name>
+  <packaging>pom</packaging>
+  <version>${spring.security.version}</version>
+  
+  <dependencies>
+        <!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>org.springframework.security</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>org.springframework.security.annotation</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+  </dependencies>
+</project>

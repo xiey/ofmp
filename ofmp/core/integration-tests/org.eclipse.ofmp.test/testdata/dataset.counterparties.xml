@@ -1,0 +1,298 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+
+<table name="COUNTERPARTY">
+		<column>ID</column>
+		<column>GENERATION</column>
+		<column>NAME</column>
+		<column>TYPE</column>
+		
+		<row>
+			<value>9991</value>
+			<value>0</value>
+			<value>200306</value>
+			<value>CUSTOMER</value>
+		</row>
+
+		<row>
+			<value>9992</value>
+			<value>0</value>
+			<value>BANQUE CANTONALE GENEVA</value>
+			<value>BANK</value>
+		</row>
+
+		<row>
+			<value>9993</value>
+			<value>0</value>
+			<value>Banca Populare di Vicenza</value>
+			<value>BANK</value>
+		</row>
+
+		<row>
+			<value>9994</value>
+			<value>0</value>
+			<value>Société Générale</value>
+			<value>BANK</value>
+		</row>
+
+		<row>
+			<value>9995</value>
+			<value>0</value>
+			<value>ROYAL BANK OF SCOTLAND NEWYORKORK-LONDON</value>
+			<value>BANK</value>
+		</row>
+
+		<row>
+			<value>9996</value>
+			<value>0</value>
+			<value>BANCA ARNER LUGANO</value>
+			<value>BANK</value>
+		</row>
+
+		<row>
+			<value>9997</value>
+			<value>0</value>
+			<value>DEXIA BANK LUXEMBOURG</value>
+			<value>BANK</value>
+		</row>
+		
+		<row>
+			<value>9998</value>
+			<value>0</value>
+			<value>BANCA DEL SEMPIONE LUGANO</value>
+			<value>BANK</value>
+		</row>
+		
+		<row>
+			<value>10001</value>
+			<value>0</value>
+			<value>2004400</value>
+			<value>CUSTOMER</value>
+		</row>
+		
+	</table>
+
+	<table name="BANK">
+		<column>ID</column>
+		<column>BACKOFFICE_ID</column>
+		<column>BACKOFFICE_PORTFOLIO</column>
+		<column>BACKOFFICE_ID_CLS</column>
+		<column>BACKOFFICE_PORTFOLIO_CLS</column>
+		<column>CLS</column>
+		
+		<row>
+			<value>9992</value>
+			<value>00.BCGECH</value>
+			<value>5002080</value>
+			<null/>
+			<null/>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>9993</value>
+			<value>00.BPVIIT</value>
+			<value>5004110</value>
+			<null/>
+			<null/>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>9994</value>
+			<value>00.SOGEFX</value>
+			<value>5005040</value>
+			<null/>
+			<null/>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>9995</value>
+			<value>00.RBOSTC</value>
+			<value>5004210</value>
+			<null/>
+			<null/>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>9996</value>
+			<value>00.ARNECH</value>
+			<value>5002160</value>
+			<null/>
+			<null/>
+			<value>F</value>
+		</row>
+
+		<row>
+			<value>9997</value>
+			<value>00.GKCCBE</value>
+			<value>5002040</value>
+			<value>00.BILCLS</value>
+			<value>5009060</value>
+			<value>T</value>
+		</row>
+		
+		<row>
+			<value>9998</value>
+			<value>00.BASECH</value>
+			<value>5002430</value>
+			<null/>
+			<null/>
+			<value>F</value>
+		</row>
+	</table>
+
+	<table name="BANK_CODE">
+		<column>BANK</column>
+		<column>CODE</column>
+		<column>SYSTEM_ID</column>
+	
+		<row>
+			<value>9992</value>
+			<value>BCGE</value>
+			<value>REUTERS</value>
+		</row>
+	
+		<row>
+			<value>9993</value>
+			<value>VINC</value>
+			<value>REUTERS</value>
+		</row>
+
+		<row>
+			<value>9994</value>
+			<value>SOGS</value>
+			<value>REUTERS</value>
+		</row>
+		
+		<row>
+			<value>9995</value>
+			<value>RBOS</value>
+			<value>REUTERS</value>
+		</row>
+	
+		<row>
+			<value>9995</value>
+			<value>RBNS</value>
+			<value>REUTERS</value>
+		</row>
+		
+		<row>
+			<value>9995</value>
+			<value>RBSL</value>
+			<value>REUTERS</value>
+		</row>
+		
+		<row>
+			<value>9996</value>
+			<value>ARNE</value>
+			<value>REUTERS</value>
+		</row>
+		
+		<row>
+			<value>9997</value>
+			<value>DXLB</value>
+			<value>REUTERS</value>
+		</row>
+		
+		<row>
+			<value>9997</value>
+			<value>DXLU</value>
+			<value>REUTERS</value>
+		</row>
+		
+		<row>
+			<value>9997</value>
+			<value>DEXT</value>
+			<value>REUTERS</value>
+		</row>
+		
+		<row>
+			<value>9997</value>
+			<value>DEXB</value>
+			<value>REUTERS</value>
+		</row>
+
+		<row>
+			<value>9997</value>
+			<value>TSTA</value>
+			<value>EBS</value>
+		</row>
+		
+		<row>
+			<value>9998</value>
+			<value>BDSX</value>
+			<value>REUTERS</value>
+		</row>
+		
+	</table>
+
+	<table name="CUSTOMER">
+		<column>ID</column>
+		<column>SHORT_NAME</column>
+		
+		<row>
+			<value>9991</value>
+			<value>Wilmus Borzel</value>
+		</row>
+		
+		<row>
+			<value>10001</value>
+			<value>2004400</value>
+		</row>
+				
+	</table>
+	
+	<table name="NOSTRO_ACCOUNT">
+		<column>ID</column>
+		<column>BANK</column>
+		<column>BACKOFFICE_ACCOUNT</column>
+		<column>CURRENCY</column>
+		
+		<row>
+			<value>1</value>
+			<value>9992</value>
+			<value>5099920</value>
+			<value>EUR</value>
+		</row>
+		
+		<row>
+			<value>2</value>
+			<value>9993</value>
+			<value>5099930</value>
+			<value>USD</value>
+		</row>
+				
+		<row>
+			<value>3</value>
+			<value>9994</value>
+			<value>5099940</value>
+			<value>JPY</value>
+		</row>
+
+		<row>
+			<value>4</value>
+			<value>9995</value>
+			<value>5099950</value>
+			<value>GBP</value>
+		</row>
+
+		<row>
+			<value>5</value>
+			<value>9996</value>
+			<value>5099960</value>
+			<value>CAD</value>
+		</row>
+
+		<row>
+			<value>6</value>
+			<value>9997</value>
+			<value>5099970</value>
+			<value>DKK</value>
+		</row>
+
+	</table>
+
+</dataset>

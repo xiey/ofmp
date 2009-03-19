@@ -1,0 +1,67 @@
+<project name="sql" default="build" basedir=".">
+	<path id="ant.classpath">
+		<fileset dir="../lib/ant/">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	
+	<property name="ORACLE_SID" value="XE" />
+	
+	<taskdef name="sqlplus" classname="net.sf.incanto.Sqlplus" classpathref="ant.classpath"/>
+
+	<target name="build" description="Builds the database." depends="tablespaces,vt_owner,vt_user,vt_report,ddl,grants" />
+
+    <target name="tablespaces" description="Creates tablespaces.">
+    	<sqlplus
+    	   logon="system/system@${ORACLE_SID}"
+    	   silent="false"
+    	   failonerror="true"
+    	   start="1_tablespaces.sql">
+    	</sqlplus>
+    </target>
+	
+    <target name="vt_owner" description="Creates the VT_OWNER user.">
+    	<sqlplus
+    	   logon="system/system@${ORACLE_SID}"
+    	   silent="false"
+    	   failonerror="true"
+    	   start="2_owner.sql">
+    	</sqlplus>
+    </target>
+
+    <target name="vt_user" description="Creates the VT_USER user.">
+    	<sqlplus
+    	   logon="VT_OWNER/VT_OWNER@${ORACLE_SID}"
+    	   silent="true"
+    	   failonerror="true"
+    	   start="3_user.sql">
+    	</sqlplus>
+    </target>
+
+    <target name="vt_report" description="Creates the VT_REPORT user.">
+    	<sqlplus
+    	   logon="VT_OWNER/VT_OWNER@${ORACLE_SID}"
+    	   silent="true"
+    	   failonerror="true"
+    	   start="4_report.sql">
+    	</sqlplus>
+    </target>
+	
+    <target name="ddl" description="Creates the database ddl.">
+    	<sqlplus
+    	   logon="VT_OWNER/VT_OWNER@${ORACLE_SID}"
+    	   silent="true"
+    	   failonerror="true"
+    	   start="5_ddl.sql">
+    	</sqlplus>
+    </target>
+	
+    <target name="grants" description="Grant rights to users.">
+    	<sqlplus
+    	   logon="VT_OWNER/VT_OWNER@${ORACLE_SID}"
+    	   silent="true"
+    	   failonerror="true"
+    	   start="6_grants.sql">
+    	</sqlplus>
+    </target>
+</project>

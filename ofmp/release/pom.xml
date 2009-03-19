@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>ofmp</artifactId>
+		<groupId>org.eclipse.ofmp</groupId>
+		<version>1.0.0-M1</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.ofmp</groupId>
+	<artifactId>ofmp-release-module</artifactId>
+	<name>Eclipse OFMP Distribution</name>
+	<packaging>pom</packaging>
+	<description>
+	<!--  Use CDATA to keep it on a single line in the manifest -->
+	<![CDATA[Eclipse OFMP Distribution - used to create several .zip packages for distribution of the different server-side runtimes and the client.]]>
+	</description>
+	
+	<modules>
+		<module>client</module>
+		<module>server</module>
+	</modules>
+	
+</project>

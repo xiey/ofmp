@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>org.eclipse.ofmp</groupId>
+		<artifactId>ofmp-core-module</artifactId>
+		<version>1.0.0-M1</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.ofmp</groupId>
+	<artifactId>ofmp-core-bundles-module</artifactId>
+	<packaging>pom</packaging>
+	<name>Eclipse OFMP Core Bundles Module</name>
+	<version>1.0.0-M1</version>
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>com.gargoylesoftware.gsbase</artifactId>
+			<version>2.0.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<properties>
+     <!-- javadoc configuration -->
+		<javadoc.loc>../../docs/src/javadoc</javadoc.loc>
+	</properties>
+	<modules>
+		<module>org.eclipse.ofmp.common</module>
+		<module>org.eclipse.ofmp.datasource.oracle</module>
+		<module>org.eclipse.ofmp.transaction</module>
+		<module>org.eclipse.ofmp.configuration</module>
+		<module>org.eclipse.ofmp.security</module>
+		<module>org.eclipse.ofmp.currency</module>
+	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>enable-springdm-pde</id>
+						<phase>process-resources</phase>
+						<configuration>
+							<tasks>
+								<copy todir="./META-INF/spring" overwrite="true"
+									failonerror="false" verbose="true">
+									<fileset dir="./src/main/resources/META-INF/spring">
+										<include name="*.xml" />
+									</fileset>
+								</copy>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+  <!-- to use these profiles invoke maven with -Pprofile-name, e.g. -->
+  <!-- mvn -Psrc install                                            -->
+	<profiles>
+          
+    <!-- integration testing profile -->
+		<profile>
+			<id>src</id>
+			<activation>
+	       		<activeByDefault>false</activeByDefault>
+		        <property>
+        	  		<name>generateSources</name>
+          			<value>true</value>
+    	    	</property>
+	      </activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

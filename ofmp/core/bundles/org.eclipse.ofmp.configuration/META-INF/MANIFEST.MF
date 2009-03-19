@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipe OFMP Configuration
+Bundle-SymbolicName: org.eclipse.ofmp.configuration
+Bundle-Version: 1.0.0
+Bundle-Activator: org.eclipse.ofmp.configuration.ConfigurationBundleActivator
+Import-Package: org.apache.log4j;version="1.2",
+ org.osgi.framework;version="1.4.0",
+ org.osgi.service.cm;version="1.2.0",
+ org.osgi.util.tracker;version="1.3.3"
+Eclipse-LazyStart: true

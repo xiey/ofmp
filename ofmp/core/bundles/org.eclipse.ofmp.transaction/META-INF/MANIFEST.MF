@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse OFMP Transaction Bundle (Incubation)
+Bundle-SymbolicName: org.eclipse.ofmp.transaction
+Bundle-Version: 1.0.0
+Import-Package: javax.jms;version="1.1.0",
+ javax.transaction;version="1.0.1",
+ javax.transaction.xa;version="1.0.1",
+ org.apache.geronimo.transaction; version="1.0.0",
+ org.apache.geronimo.transaction.log; version="1.0.0",
+ org.apache.geronimo.transaction.manager; version="1.0.0",
+ org.jencks.factory,
+ org.osgi.framework;version="1.4.0"
+

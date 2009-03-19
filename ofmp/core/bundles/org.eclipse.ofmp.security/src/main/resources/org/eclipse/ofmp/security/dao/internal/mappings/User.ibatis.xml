@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="User">
+	<typeAlias alias="User" type="org.eclipse.ofmp.security.dom.User"/>
+	<typeAlias alias="UserRole" type="org.eclipse.ofmp.security.dom.UserRole"/>
+	<typeAlias alias="Role" type="org.eclipse.ofmp.security.dom.Role"/>
+	<typeAlias alias="Dealer" type="org.eclipse.ofmp.security.dom.Dealer"/>
+	<typeAlias alias="ExternalCode" type="org.eclipse.ofmp.security.dom.ExternalCode"/>
+
+	<typeAlias alias="UserRoleHandler" type="org.eclipse.ofmp.security.dao.internal.mappings.handlers.UserRoleTypeHandler"/>
+	<typeAlias alias="myBooleanTypeHandler" type="org.eclipse.ofmp.common.dao.ibatis.handlers.BooleanTypeHandler"/>
+
+	<resultMap id="User" class="User">
+		<result property="id" 			column="ID"/>
+		<result property="generation"	column="GENERATION"/>
+		<result property="name" 		column="NAME"/>
+		<result property="OSUser"		column="OSUSER"/>
+		<result property="enabled"		column="ENABLED" typeHandler="myBooleanTypeHandler"/>
+	</resultMap>
+	
+	<resultMap id="Dealer" class="Dealer">
+		<result property="id" 			column="ID"/>
+		<result property="generation"	column="GENERATION"/>
+	</resultMap>
+
+	<resultMap id="UserRole" class="UserRole">
+		<result property="id" 			column="ID"/>
+		<result property="user" 		column="USR"/>
+		<result property="role"   		column="ROLE" typeHandler="UserRoleHandler"/>
+	</resultMap>
+	
+	<resultMap id="ExternalCode" class="ExternalCode">
+		<result property="code" column="CODE"/>
+		<result property="systemId" column="SYSTEM_ID"/>
+		<result property="entity" column="DEALER"/>
+	</resultMap>
+	
+	
+	<insert id="insertUser" parameterClass="User">
+		<selectKey resultClass="int" keyProperty="id">
+			select ${schema}.USER_SEQ.NEXTVAL from DUAL
+		</selectKey>	
+		insert into ${schema}.USERS (
+			ID, NAME, OSUSER, ENABLED, GENERATION)
+		values (
+			#id#, 
+			#name#,
+			#OSUser#,
+			#enabled,handler=myBooleanTypeHandler#,
+			0)
+	</insert>
+
+	<insert id="updateUser" parameterClass="User">
+		update 
+			${schema}.USERS
+		set 
+			NAME=#name#,
+			OSUSER=#OSUser#,
+			ENABLED=#enabled,handler=myBooleanTypeHandler#,			
+			GENERATION=GENERATION+1
+		where
+			ID=#id#
+	</insert>
+
+	<select id="selectUsers" resultMap="User">
+		select 
+			ID, NAME, OSUSER, ENABLED, GENERATION
+		from 
+			${schema}.USERS
+		<dynamic prepend="WHERE">
+			<isParameterPresent>
+				ID=#value#
+			</isParameterPresent>
+		</dynamic>
+	</select>
+
+	<select id="selectUserByOSUser" resultMap="User">
+		select 
+			ID, NAME, OSUSER, ENABLED, GENERATION
+		from 
+			${schema}.USERS
+		where
+			OSUSER=#value#
+	</select>
+ 
+	<insert id="insertRole" parameterClass="UserRole">
+		<selectKey resultClass="int" keyProperty="id">
+			select ${schema}.ROLE_SEQ.NEXTVAL from DUAL
+		</selectKey>	
+		insert into ${schema}.ROLE (
+			ID, USR, ROLE)
+		values (
+			#id#, 
+			#user#,
+			#role,handler=UserRoleHandler#)
+	</insert>
+
+	<delete id="deleteRole" parameterClass="UserRole">
+		delete from ${schema}.ROLE
+		where usr = #user#
+		  and role = #role,handler=UserRoleHandler#
+	</delete>
+
+	<delete id="deleteRoles" parameterClass="Integer">
+		delete from ${schema}.ROLE
+		where usr = #value#
+	</delete>
+	
+	<select id="selectRoles" resultMap="UserRole">
+		select 
+			ID, USR, ROLE
+		from 
+			${schema}.ROLE
+		<dynamic>
+			<isNotNull prepend="WHERE" property="user">
+				USR=#user#
+			</isNotNull>
+			
+			<isNotNull prepend="AND" property="role">
+				ROLE=#role,handler=UserRoleHandler#
+			</isNotNull>
+		</dynamic>
+	</select>
+
+	<select id="selectUserRoles" resultMap="UserRole">
+		select 
+			ID, USR, ROLE
+		from 
+			${schema}.ROLE
+		<dynamic prepend="WHERE">
+			<isParameterPresent>
+				USR=#value#
+			</isParameterPresent>
+		</dynamic>
+	</select>
+
+	<insert id="insertDealer" parameterClass="Dealer">
+		insert into ${schema}.DEALER (
+			ID, GENERATION)
+		values (
+			#id#,
+			0)
+	</insert>
+
+	<insert id="updateDealer" parameterClass="Dealer">
+		update 
+			${schema}.DEALER
+		set 
+			GENERATION=GENERATION+1
+		where
+			ID=#id#
+	</insert>
+
+	<select id="findDealer" resultMap="Dealer">
+		select 
+			DEALER.ID, DEALER.GENERATION
+		from 
+			${schema}.USERS, ${schema}.DEALER
+		where
+			USERS.ID = DEALER.ID
+		and USERS.ENABLED = 'T'
+		and DEALER.ID = #value#		
+	</select>
+
+	<select id="selectDealers" resultMap="Dealer">
+		select 
+			DEALER.ID, DEALER.GENERATION
+		from 
+			${schema}.DEALER
+		<dynamic prepend="WHERE">
+			<isParameterPresent>
+				ID=#value#
+			</isParameterPresent>
+		</dynamic>
+		
+	</select>
+
+	<select id="selectDealersByType" parameterClass="java.lang.String" resultMap="Dealer">
+		select 
+			DEALER.ID, DEALER.GENERATION
+		from 
+			${schema}.USERS, ${schema}.DEALER
+		where
+			USERS.ID = DEALER.ID
+		and USERS.ENABLED = 'T'		
+		<dynamic prepend="AND">
+			<isParameterPresent>
+				DEALER.ID in (select USR from ${schema}.ROLE where ROLE=#value#)
+			</isParameterPresent>
+		</dynamic>
+		
+	</select>
+	
+	<delete id="deleteFrontOfficeIds" parameterClass="java.lang.Integer">
+		delete from ${schema}.DEALER_CODE where DEALER=#value#
+	</delete>
+
+	<insert id="insertFrontOfficeId" parameterClass="ExternalCode">
+		insert into ${schema}.DEALER_CODE(SYSTEM_ID, CODE, DEALER) values(#systemId#, #code#, #entity#)
+	</insert>
+	
+	<select id="selectFrontOfficeIds" parameterClass="java.lang.Integer" resultMap="ExternalCode">
+		select DEALER, CODE, SYSTEM_ID
+		from ${schema}.DEALER_CODE
+		where DEALER=#entity#
+	</select>
+	
+	<select id="selectDealerByExternalId" resultMap="Dealer" parameterClass="ExternalCode">
+		select 
+			ID, GENERATION
+		from 
+			${schema}.DEALER
+		where 
+			ID = (select DEALER from ${schema}.DEALER_CODE where CODE=#code# and SYSTEM_ID=#systemId#)
+	</select>
+	
+</sqlMap>

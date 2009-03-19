@@ -1,0 +1,23 @@
+<rcml 
+	xmlns="http://www.rcml.net/ns/binding"
+	xmlns:rcml="http://www.rcml.net/ns/rcml"
+	xmlns:swt="http://www.rcml.net/ns/swt"
+	language="ofmpSimulation">
+	
+	<setBusinessDate date="10-08-2007 08:00"/>
+	<assertBusinessDateEquals date="10-08-2007"/>
+	<assertIsBusinessDay value="true"/>
+
+	<doRollToStartOfBusinessDay/>
+	<assertBusinessDateEquals date="13-08-2007"/>
+	<assertIsBusinessDay value="true"/>
+	
+	<doRollBusinessDate unit="DAY" count="3"/>
+	<assertBusinessDateEquals date="16-08-2007"/>
+	<assertIsBusinessDay value="true"/>
+	
+<!--	<doRollToEndOfBusinessDay/>-->
+<!--	<assertBusinessDateEquals date="13-08-2007"/>-->
+<!--	<assertIsBusinessDay value="false"/>-->
+	
+</rcml>
