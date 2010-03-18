@@ -47,4 +47,5 @@
 			<version>${equinox.ver}</version>
 		</dependency>
 	</dependencies>
+	
 </project>

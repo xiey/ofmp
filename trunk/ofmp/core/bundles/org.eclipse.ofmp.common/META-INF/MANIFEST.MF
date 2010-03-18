@@ -12,7 +12,7 @@ Import-Package: com.ibatis.sqlmap.client.extensions;version="2.3.0.677
  1",org.springframework.transaction;version="2.5.5.A",org.springframew
  ork.transaction.support;version="2.5.5.A"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Bnd-LastModified: 1237471020140
+Bnd-LastModified: 1268925185859
 Export-Package: org.eclipse.ofmp.common.dom;uses:="org.apache.commons.
  lang.builder,org.eclipse.ofmp.common.utils";version="1.0.0.M1",org.ec
  lipse.ofmp.common.aop;uses:="org.springframework.transaction,org.apac
