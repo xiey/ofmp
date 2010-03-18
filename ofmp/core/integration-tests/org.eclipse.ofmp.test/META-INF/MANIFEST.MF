@@ -17,11 +17,11 @@ Import-Package: javax.sql,org.apache.log4j;version="1.2",org.dbunit.da
  .springframework.security.providers;version="2.0.0.A",org.springframe
  work.util;version="2.5.5.A"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Bnd-LastModified: 1228689837537
+Bnd-LastModified: 1268925419984
 Export-Package: org.eclipse.ofmp.test;uses:="org.springframework.osgi.
  test.platform,org.osgi.framework,org.springframework.security,org.ecl
  ipse.ofmp.test.utils,org.springframework.core.io,org.springframework.
- security.providers,org.springframework.security.context,org.eclipse.o
+ security.context,org.springframework.security.providers,org.eclipse.o
  fmp.security.business,org.springframework.osgi.test,org.springframewo
  rk.osgi.test.provisioning,org.springframework.util";version="1.0.0.M1
  ",org.eclipse.ofmp.test.utils;uses:="org.apache.log4j,org.springframe
@@ -29,7 +29,7 @@ Export-Package: org.eclipse.ofmp.test;uses:="org.springframework.osgi.
  .0.M1"
 Bundle-Version: 1.0.0.M1
 Ignore-Package: org.eclipse.ofmp.test.internal
-Bundle-Name: Eclipse OFMP Test bundle
+Bundle-Name: Eclipse OFMP Test Bundle (Incubation)
 Bundle-Description: The OFMP project's goal is to build an extensible,
   component-based Financial Market Platform based on industry business
   requirements and state of the art technologies.

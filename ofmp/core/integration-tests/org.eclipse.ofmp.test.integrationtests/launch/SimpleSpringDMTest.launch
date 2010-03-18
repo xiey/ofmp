@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.junit.launchconfig">
 <stringAttribute key="bad_container_name" value="\org.eclipse.ofmp.test.integrationtests\launc"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
@@ -20,5 +20,5 @@
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.ofmp.test.integrationtests.SimpleSpringDMTest"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.eclipse.ofmp.test.integrationtests"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Declipse.target.area1=C:\dev\ofmp\ofmp\runtime\server\core-runtime\target\eclipse_plugins&#13;&#10;-Declipse.target.area2=C:\dev\ofmp\ofmp\runtime\server\core-runtime\target\maven_plugins"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Declipse.target.area1=${project_loc:ofmp}\runtime\server\core-runtime\target\eclipse_plugins&#13;&#10;-Declipse.target.area2=${project_loc:ofmp}\runtime\server\core-runtime\target\maven_plugins"/>
 </launchConfiguration>

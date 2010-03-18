@@ -20,7 +20,7 @@ Import-Package: com.ibatis.sqlmap.client;version="2.3.0.677",jcifs;ver
  s;version="2.0.0.A",org.springframework.security.vote;version="2.0.0.
  A"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Bnd-LastModified: 1237471031046
+Bnd-LastModified: 1268925189203
 Export-Package: org.eclipse.ofmp.security.dao;uses:="org.eclipse.ofmp.
  security.dom";version="1.0.0.M1",org.eclipse.ofmp.security.business;u
  ses:="org.springframework.security,org.springframework.security.conte

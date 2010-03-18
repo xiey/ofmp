@@ -35,7 +35,7 @@ Import-Package: com.ibatis.sqlmap.client;version="2.3.0.677",com.ibati
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Spring-Context: *;create-asynchronously:=false
 Bundle-ActivationPolicy: lazy
-Bnd-LastModified: 1237471037937
+Bnd-LastModified: 1268925192593
 Export-Package: org.eclipse.ofmp.currency.business;uses:="org.springfr
  amework.security.annotation,org.eclipse.ofmp.currency.dom,org.eclipse
  .ofmp.common.exception";version="1.0.0.M1",org.eclipse.ofmp.currency.
