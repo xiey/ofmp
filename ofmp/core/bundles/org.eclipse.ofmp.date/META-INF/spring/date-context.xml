@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd
+                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd"
+    >
+    
+	<tx:annotation-driven transaction-manager="springTransactionManager"/>
+
+	<!-- DAO -->    
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="classpath:org/eclipse/ofmp/date/dao/internal/ibatisconfig.xml"/>
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<bean id="dateDAO" class="org.eclipse.ofmp.date.dao.internal.DateDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+
+	<!-- Service -->    
+	<bean id="calendarService" class="org.eclipse.ofmp.date.business.internal.CalendarServiceImpl">
+		<property name="currencyService" ref="currencyService" />
+		<property name="calendarFile"
+			value="Currencies_Holidays.txt" />
+	</bean>
+
+	<bean id="dateService" class="org.eclipse.ofmp.date.business.internal.DateServiceImpl">
+		<property name="calendarService" ref="calendarService" />
+		<property name="dateDAO" ref="dateDAO" />
+		<property name="transactionManager" ref="springTransactionManager" />
+	</bean>
+	
+	<bean id="timeFlowSimulation"
+		class="org.eclipse.ofmp.date.business.internal.TimeFlowSimulationBean">
+		<property name="dateService" ref="dateService" />
+		<property name="calendarService" ref="calendarService" />
+		<property name="enabled" value="true" />
+	</bean>
+
+</beans>

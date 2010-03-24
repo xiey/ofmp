@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<parent>
 		<groupId>org.eclipse.ofmp</groupId>
 		<artifactId>ofmp-core-module</artifactId>
@@ -30,7 +30,10 @@
 		<module>org.eclipse.ofmp.configuration</module>
 		<module>org.eclipse.ofmp.security</module>
 		<module>org.eclipse.ofmp.currency</module>
-	</modules>
+		<module>org.eclipse.ofmp.mail</module>
+    <module>org.eclipse.ofmp.date</module>
+    <module>org.eclipse.ofmp.counterparty</module>
+  </modules>
 	<build>
 		<plugins>
 			<plugin>
@@ -41,10 +44,9 @@
 						<phase>process-resources</phase>
 						<configuration>
 							<tasks>
-								<copy todir="./META-INF/spring" overwrite="true"
-									failonerror="false" verbose="true">
+								<copy todir="./META-INF/spring" overwrite="true" failonerror="false" verbose="true">
 									<fileset dir="./src/main/resources/META-INF/spring">
-										<include name="*.xml" />
+										<include name="*.xml"/>
 									</fileset>
 								</copy>
 							</tasks>

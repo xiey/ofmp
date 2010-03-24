@@ -244,55 +244,5 @@
 		</row>
 				
 	</table>
-	
-	<table name="NOSTRO_ACCOUNT">
-		<column>ID</column>
-		<column>BANK</column>
-		<column>BACKOFFICE_ACCOUNT</column>
-		<column>CURRENCY</column>
-		
-		<row>
-			<value>1</value>
-			<value>9992</value>
-			<value>5099920</value>
-			<value>EUR</value>
-		</row>
-		
-		<row>
-			<value>2</value>
-			<value>9993</value>
-			<value>5099930</value>
-			<value>USD</value>
-		</row>
-				
-		<row>
-			<value>3</value>
-			<value>9994</value>
-			<value>5099940</value>
-			<value>JPY</value>
-		</row>
-
-		<row>
-			<value>4</value>
-			<value>9995</value>
-			<value>5099950</value>
-			<value>GBP</value>
-		</row>
-
-		<row>
-			<value>5</value>
-			<value>9996</value>
-			<value>5099960</value>
-			<value>CAD</value>
-		</row>
-
-		<row>
-			<value>6</value>
-			<value>9997</value>
-			<value>5099970</value>
-			<value>DKK</value>
-		</row>
-
-	</table>
 
 </dataset>

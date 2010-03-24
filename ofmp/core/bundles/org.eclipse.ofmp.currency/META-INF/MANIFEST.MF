@@ -1,7 +1,38 @@
 Manifest-Version: 1.0
+Export-Package: org.eclipse.ofmp.currency.dao.handlers;uses:="com.ibat
+ is.sqlmap.client.extensions,org.eclipse.ofmp.common.exception,org.spr
+ ingframework.beans.factory.annotation,org.eclipse.ofmp.currency.dom,o
+ rg.eclipse.ofmp.currency.business";version="1.0.0.M1",org.eclipse.ofm
+ p.currency.dao;uses:="org.eclipse.ofmp.currency.dom,org.eclipse.ofmp.
+ currency.business";version="1.0.0.M1",org.eclipse.ofmp.currency.dom;u
+ ses:="org.eclipse.ofmp.common.dom,org.apache.commons.lang.builder,org
+ .apache.commons.lang.time,org.eclipse.ofmp.common.utils";version="1.0
+ .0.M1",org.eclipse.ofmp.currency.business;uses:="org.springframework.
+ security.annotation,org.eclipse.ofmp.common.exception,org.eclipse.ofm
+ p.currency.dom";version="1.0.0.M1"
+Private-Package: org.eclipse.ofmp.currency.business.internal,org.eclip
+ se.ofmp.currency.dao.internal,org.eclipse.ofmp.currency.dao.internal.
+ mappings
+Ignore-Package: org.eclipse.ofmp.currency.dao.internal.mappings,org.ec
+ lipse.ofmp.currency.business.internal,org.eclipse.ofmp.currency.dao.i
+ nternal
+Bundle-ActivationPolicy: lazy
 Built-By: Fred
+Tool: Bnd-0.0.255
+Bundle-Name: Eclipse OFMP Currency Bundle (Incubation)
 Created-By: Apache Maven Bundle Plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Vendor: Eclipse OFMP
+Build-Jdk: 1.6.0_11
+Bundle-Version: 1.0.0.M1
+Bnd-LastModified: 1269387542578
+Spring-Context: *;create-asynchronously:=false
+Bundle-ManifestVersion: 2
+Bundle-Description: The OFMP project's goal is to build an extensible,
+  component-based Financial Market Platform based on industry business
+  requirements and state of the art technologies.
 Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Bundle-DocURL: http://www.eclipse.org/ofmp
 Import-Package: com.ibatis.sqlmap.client;version="2.3.0.677",com.ibati
  s.sqlmap.client.extensions;version="2.3.0.677",javax.transaction,org.
  aopalliance.aop;version="1.0",org.aopalliance.intercept;version="1.0"
@@ -32,36 +63,5 @@ Import-Package: com.ibatis.sqlmap.client;version="2.3.0.677",com.ibati
  k.transaction.annotation;version="2.5.5.A",org.springframework.transa
  ction.jta;version="2.5.5.A",org.springframework.transaction.support;v
  ersion="2.5.5.A"
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Spring-Context: *;create-asynchronously:=false
-Bundle-ActivationPolicy: lazy
-Bnd-LastModified: 1268925192593
-Export-Package: org.eclipse.ofmp.currency.business;uses:="org.springfr
- amework.security.annotation,org.eclipse.ofmp.currency.dom,org.eclipse
- .ofmp.common.exception";version="1.0.0.M1",org.eclipse.ofmp.currency.
- dom;uses:="org.eclipse.ofmp.common.dom,org.apache.commons.lang.builde
- r,org.eclipse.ofmp.common.utils,org.apache.commons.lang.time";version
- ="1.0.0.M1",org.eclipse.ofmp.currency.dao;uses:="org.eclipse.ofmp.cur
- rency.business,org.eclipse.ofmp.currency.dom";version="1.0.0.M1",org.
- eclipse.ofmp.currency.dao.handlers;uses:="org.eclipse.ofmp.currency.b
- usiness,org.springframework.beans.factory.annotation,org.eclipse.ofmp
- .currency.dom,com.ibatis.sqlmap.client.extensions,org.eclipse.ofmp.co
- mmon.exception";version="1.0.0.M1"
-Bundle-Version: 1.0.0.M1
-Ignore-Package: org.eclipse.ofmp.currency.dao.internal.mappings,org.ec
- lipse.ofmp.currency.dao.internal,org.eclipse.ofmp.currency.business.i
- nternal
-Bundle-Name: Eclipse OFMP Currency Bundle (Incubation)
-Bundle-Description: The OFMP project's goal is to build an extensible,
-  component-based Financial Market Platform based on industry business
-  requirements and state of the art technologies.
-Build-Jdk: 1.5.0_12
-Bundle-DocURL: http://www.eclipse.org/ofmp
-Private-Package: org.eclipse.ofmp.currency.business.internal,org.eclip
- se.ofmp.currency.dao.internal,org.eclipse.ofmp.currency.dao.internal.
- mappings
-Bundle-Vendor: Eclipse OFMP
-Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.ofmp.currency
-Tool: Bnd-0.0.255
 

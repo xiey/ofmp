@@ -12,5 +12,5 @@
 <stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit3"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.ofmp.security.test.AllTests"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.eclipse.ofmp.security.integrationtests"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Declipse.target.area1=C:\dev\ofmp\ofmp\runtime\server\core-runtime\target\eclipse_plugins&#13;&#10;-Declipse.target.area2=C:\dev\ofmp\ofmp\runtime\server\core-runtime\target\maven_plugins"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Declipse.target.area1=${project_loc:ofmp}\runtime\server\core-runtime\target\eclipse_plugins&#13;&#10;-Declipse.target.area2=${project_loc:ofmp}\runtime\server\core-runtime\target\maven_plugins"/>
 </launchConfiguration>

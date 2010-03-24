@@ -10,7 +10,6 @@ public interface CurrencyService
     public Currency findCurrency(String aCurrencyCode) throws OFMPException;
 
     public Collection<Currency> enumerate(Boolean excludeReportingCurrency) throws OFMPException;
-    
+
     public Currency getReportingCurrency() throws OFMPException;
-    
 }

@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Built-By: Fred
+Created-By: Apache Maven Bundle Plugin
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Import-Package: javax.mail;version="1.4",javax.mail.internet;version="
+ 1.4",org.apache.commons.lang,org.apache.log4j;version="1.2",org.eclip
+ se.ofmp.mail,org.springframework.beans;version="2.5.5.A",org.springfr
+ amework.beans.factory.annotation;version="2.5.5.A",org.springframewor
+ k.beans.factory.config;version="2.5.5.A",org.springframework.beans.fa
+ ctory.wiring;version="2.5.5.A",org.springframework.core;version="2.5.
+ 5.A",org.springframework.core.io;version="2.5.5.A",org.springframewor
+ k.core.io.support;version="2.5.5.A",org.springframework.mail;version=
+ "2.5.5.A",org.springframework.mail.javamail;version="2.5.5.A"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Spring-Context: *;create-asynchronously:=false
+Bundle-ActivationPolicy: lazy
+Bnd-LastModified: 1269369233078
+Export-Package: org.eclipse.ofmp.mail;uses:="org.springframework.mail,
+ javax.mail"
+Bundle-Version: 1.0.0.M1
+Ignore-Package: org.eclipse.ofmp.mail.internal
+Bundle-Name: Eclipse OFMP Mail Bundle (Incubation)
+Bundle-Description: The OFMP project's goal is to build an extensible,
+  component-based Financial Market Platform based on industry business
+  requirements and state of the art technologies.
+Build-Jdk: 1.5.0_12
+Bundle-DocURL: http://www.eclipse.org/ofmp
+Private-Package: org.eclipse.ofmp.mail.internal
+Bundle-Vendor: Eclipse OFMP
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.ofmp.mail
+Tool: Bnd-0.0.255
+

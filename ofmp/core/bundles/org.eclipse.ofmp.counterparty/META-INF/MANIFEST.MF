@@ -1,0 +1,63 @@
+Manifest-Version: 1.0
+Built-By: Fred
+Created-By: Apache Maven Bundle Plugin
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Import-Package: com.ibatis.sqlmap.client;version="2.3.0.677",javax.tra
+ nsaction,org.aopalliance.aop;version="1.0",org.aopalliance.intercept;
+ version="1.0",org.apache.commons.lang;version="2.1",org.apache.common
+ s.lang.builder;version="2.1",org.apache.log4j;version="1.2",org.aspec
+ tj.lang;version="[1.6.2,2.0.0)",org.aspectj.runtime.reflect;version="
+ [1.6.2,2.0.0)",org.eclipse.ofmp.common.aop;version="1.0.0",org.eclips
+ e.ofmp.common.dao.ibatis.handlers;version="1.0.0.M1",org.eclipse.ofmp
+ .common.dom;version="1.0.0.M1",org.eclipse.ofmp.common.exception;vers
+ ion="1.0.0.M1",org.eclipse.ofmp.counterparty.business;version="1.0.0.
+ M1",org.eclipse.ofmp.counterparty.dao;version="1.0.0.M1",org.eclipse.
+ ofmp.counterparty.dao.handlers;version="1.0.0.M1",org.eclipse.ofmp.co
+ unterparty.dom;version="1.0.0.M1",org.eclipse.ofmp.security.dom;versi
+ on="1.0.0.M1",org.springframework.aop;version="2.5.5.A",org.springfra
+ mework.aop.framework;version="2.5.5.A",org.springframework.beans;vers
+ ion="2.5.5.A",org.springframework.beans.factory;version="2.5.5.A",org
+ .springframework.beans.factory.annotation;version="2.5.5.A",org.sprin
+ gframework.beans.factory.aspectj;version="2.5.5.A",org.springframewor
+ k.beans.factory.config;version="2.5.5.A",org.springframework.beans.fa
+ ctory.wiring;version="2.5.5.A",org.springframework.core;version="2.5.
+ 5.A",org.springframework.core.io.support;version="2.5.5.A",org.spring
+ framework.dao.support;version="2.5.5.A",org.springframework.instrumen
+ t.classloading;version="2.5.5.A",org.springframework.orm.ibatis;versi
+ on="2.5.5.A",org.springframework.orm.ibatis.support;version="2.5.5.A"
+ ,org.springframework.security;version="2.0.0.A",org.springframework.s
+ ecurity.annotation;version="2.0.0.A",org.springframework.security.int
+ ercept;version="2.0.0.A",org.springframework.transaction;version="2.5
+ .5.A",org.springframework.transaction.annotation;version="2.5.5.A",or
+ g.springframework.transaction.jta;version="2.5.5.A",org.springframewo
+ rk.transaction.support;version="2.5.5.A"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Spring-Context: *;create-asynchronously:=false
+Bundle-ActivationPolicy: lazy
+Bnd-LastModified: 1269448859187
+Export-Package: org.eclipse.ofmp.counterparty.dao;uses:="org.eclipse.o
+ fmp.counterparty.dom";version="1.0.0.M1",org.eclipse.ofmp.counterpart
+ y.dao.handlers;uses:="org.eclipse.ofmp.common.dao.ibatis.handlers,org
+ .eclipse.ofmp.counterparty.dom";version="1.0.0.M1",org.eclipse.ofmp.c
+ ounterparty.business;uses:="org.springframework.security.annotation,o
+ rg.eclipse.ofmp.counterparty.dom,org.eclipse.ofmp.common.exception";v
+ ersion="1.0.0.M1",org.eclipse.ofmp.counterparty.dom;uses:="org.eclips
+ e.ofmp.common.dom,org.apache.commons.lang.builder";version="1.0.0.M1"
+Bundle-Version: 1.0.0.M1
+Ignore-Package: org.eclipse.ofmp.counterparty.dao.internal.mappings,or
+ g.eclipse.ofmp.counterparty.dao.internal,org.eclipse.ofmp.counterpart
+ y.business.internal
+Bundle-Name: Eclipse OFMP Counterparty Bundle (Incubation)
+Bundle-Description: The OFMP project's goal is to build an extensible,
+  component-based Financial Market Platform based on industry business
+  requirements and state of the art technologies.
+Build-Jdk: 1.5.0_12
+Bundle-DocURL: http://www.eclipse.org/ofmp
+Private-Package: org.eclipse.ofmp.counterparty.business.internal,org.e
+ clipse.ofmp.counterparty.dao.internal,org.eclipse.ofmp.counterparty.d
+ ao.internal.mappings
+Bundle-Vendor: Eclipse OFMP
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.ofmp.counterparty
+Tool: Bnd-0.0.255
+

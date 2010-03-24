@@ -10,9 +10,7 @@
 <booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
 <stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
 <stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit3"/>
-<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.maven.ide.eclipse.launchconfig.classpathProvider"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value=""/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.eclipse.ofmp.currency.integrationtests"/>
-<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.maven.ide.eclipse.launchconfig.sourcepathProvider"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Declipse.target.area1=C:\dev\ofmp\ofmp\runtime\server\core-runtime\target\eclipse_plugins&#13;&#10;-Declipse.target.area2=C:\dev\ofmp\ofmp\runtime\server\core-runtime\target\maven_plugins"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Declipse.target.area1=${project_loc:ofmp}\runtime\server\core-runtime\target\eclipse_plugins&#13;&#10;-Declipse.target.area2=${project_loc:ofmp}\runtime\server\core-runtime\target\maven_plugins"/>
 </launchConfiguration>

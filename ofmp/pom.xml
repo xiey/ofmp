@@ -31,7 +31,7 @@
    <jdk-classifier>jdk15</jdk-classifier>
    <source-jdk>1.5</source-jdk>
    <clover.ver>2.3.1</clover.ver>
-   <clover.argLine></clover.argLine>
+   <clover.argLine/>
    <clover.skip>false</clover.skip>
   </properties>
 
@@ -421,11 +421,6 @@ limitations under the License.
       <url>http://maven.springframework.org/osgi</url>
     </repository>
     
-    <repository>
-      <id>ofmp-ext</id>
-      <name>Eclipse OFMP External Dependencies Repository</name>
-      <url>http://www.covariance.lu/repository/org/eclipse/ofmp</url>
-    </repository>
   </repositories>
 
 </project>

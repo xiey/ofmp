@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd
+                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+	<bean id="mailPropertiesPostProcessor"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+
+		<property name="properties">
+			<props>
+				<prop key="server.mail">contact@mycompany.com</prop>
+				<prop key="smtp.host">smtp.gmail.com</prop>
+				<prop key="smtp.port">465</prop>
+				<prop key="smtp.username">user@gmail.com</prop>
+				<prop key="smtp.password">password</prop>
+				<prop key="smtp.debug">true</prop>
+				<prop key="mail.session.bean">sslMailSession</prop>
+				<prop key="support.mailinglist">support@mycompany.com</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="smtpAuthenticator" class="org.eclipse.ofmp.mail.internal.SmtpAuthenticator">
+		<constructor-arg value="${smtp.username}" />
+		<constructor-arg value="${smtp.password}" />
+	</bean>
+
+	<bean id="mailSession" class="javax.mail.Session"
+		factory-method="getInstance">
+		<constructor-arg>
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.socketFactory.port">${smtp.port}</prop>
+				<prop key="mail.smtp.socketFactory.fallback">false</prop>
+			</props>
+		</constructor-arg>
+		<constructor-arg ref="smtpAuthenticator" />
+	</bean>
+
+	<bean id="sslMailSession" class="javax.mail.Session"
+		factory-method="getInstance">
+		<constructor-arg>
+			<props>
+				<prop key="mail.smtp.socketFactory.port">${smtp.port}</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.smtp.socketFactory.fallback">false</prop>
+			</props>
+		</constructor-arg>
+		<constructor-arg ref="smtpAuthenticator" />
+	</bean>
+
+	<bean id="mailService" class="org.eclipse.ofmp.mail.internal.MailServiceImpl">
+		<property name="from" value="${server.mail}" />
+		<property name="defaultReceiver" value="${support.mailinglist}" />
+		<property name="mailSender">
+			<bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+				<property name="defaultEncoding" value="UTF-8"/> 
+  				<property name="host" value="${smtp.host}" />
+  				<property name="javaMailProperties">
+					<props>
+						<prop key="mail.debug">${smtp.debug}</prop>
+ 						<prop key="mail.smtp.connectiontimeout">2000</prop>
+					</props>
+  				</property>
+  				<property name="session" ref="${mail.session.bean}" /> 
+  			</bean>
+		</property>
+	</bean>
+
+</beans>

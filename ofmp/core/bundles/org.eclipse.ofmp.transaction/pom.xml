@@ -45,6 +45,12 @@
 			<version>1.0.0</version>
 		</dependency> 
 
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>org.eclipse.ofmp.lib.javax.ejb</artifactId>
+			<version>2.1.0</version>
+		</dependency> 
+
 	</dependencies>
 
 	<build>

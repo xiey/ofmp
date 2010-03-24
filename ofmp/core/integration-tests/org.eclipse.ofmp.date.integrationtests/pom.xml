@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>ofmp-core-integration-tests-module</artifactId>
+		<groupId>org.eclipse.ofmp</groupId>
+		<version>1.0.0-M1</version>
+	</parent>
+    <modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.ofmp</groupId>
+	<artifactId>org.eclipse.ofmp.date.integrationtests</artifactId>
+	<name>Eclipse OFMP Date Integration Tests</name>
+	<version>1.0.0-M1</version>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>org.eclipse.ofmp.lib.springframework</artifactId>
+			<type>pom</type>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>org.eclipse.ofmp.common</artifactId>
+			<version>1.0.0-M1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>org.eclipse.ofmp.test</artifactId>
+			<version>1.0.0-M1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>org.eclipse.ofmp.date</artifactId>
+			<version>1.0.0-M1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.ofmp</groupId>
+			<artifactId>net.objectlab.kit.datecalc</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.test</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.extensions.annotation</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aopalliance</groupId>
+			<artifactId>com.springsource.org.aopalliance</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>com.springsource.javax.ejb</artifactId>
+			<version>3.0.0</version>
+		</dependency>		
+		<dependency>
+			<groupId>javax.xml.rpc</groupId>
+			<artifactId>com.springsource.javax.xml.rpc</artifactId>
+			<version>1.1.0</version>
+		</dependency>		
+		<dependency>
+			<groupId>javax.xml.soap</groupId>
+			<artifactId>com.springsource.javax.xml.soap</artifactId>
+			<version>1.3.0</version>
+		</dependency>
+				
+	</dependencies>
+</project>
