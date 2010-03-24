@@ -16,10 +16,8 @@
 		</interfaces>
 	</reference>
 	<reference id="transactionManager"  interface="javax.transaction.TransactionManager" />
-	<reference id="currencyService"     interface="org.eclipse.ofmp.currency.business.CurrencyService" />
 
-	<service ref="dateService" interface="org.eclipse.ofmp.date.business.DateLocalService" />
-	<service ref="calendarService" interface="org.eclipse.ofmp.date.business.CalendarLocalService" />
-	<service ref="timeFlowSimulation" interface="org.eclipse.ofmp.date.business.TimeFlowSimulationBeanMBean"></service>
-	
+	<service ref="currencyService"     interface="org.eclipse.ofmp.currency.business.CurrencyService" />
+	<service ref="currencyRateService" interface="org.eclipse.ofmp.currency.business.CurrencyRateService" />
+
 </beans:beans>
