@@ -8,23 +8,13 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class OFMPDateUtils
+public class DateUtils extends org.apache.commons.lang.time.DateUtils
 {
-    /**
-     *
-     */
-    private OFMPDateUtils()
+
+    private DateUtils()
     {
     }
 
-    /**
-     * Returns the difference in milliseconds between date1 and date2. <br>
-     * If the return value is negative, date1 is before date2.
-     * 
-     * @param date1
-     * @param date2
-     * @return long the number of milliseconds between date1 and date2
-     */
     public static long diffMillis(Date date1, Date date2)
     {
         Calendar cal1 = new OFMPCalendar(date1);
@@ -34,13 +24,6 @@ public class OFMPDateUtils
         return cal1.getTimeInMillis() - cal2.getTimeInMillis();
     }
 
-    /**
-     * Returns the difference in days between date1 and date2. If the return value is negative, date1 is before date2.
-     * 
-     * @param date1
-     * @param date2
-     * @return long the number of days between the given date and the current date/time.
-     */
     public static long diffDays(Date date1, Date date2)
     {
         return diffMillis(date1, date2) / (24 * 60 * 60 * 1000);
@@ -61,47 +44,26 @@ public class OFMPDateUtils
         return cal.getTime();
     }
 
-    /**
-     * Transforms a Date object to a String using the given format
-     * 
-     * @param date
-     * @param format
-     * @return String
-     */
+    public static Date addYears(Date date, int numberOfYears)
+    {
+        Calendar cal = new GregorianCalendar();
+        cal.setTime(date);
+        cal.add(Calendar.YEAR, numberOfYears);
+        return cal.getTime();
+    }
+
     public static String dateToString(Date date, String format)
     {
         DateFormat formatter = new SimpleDateFormat(format);
         return formatter.format(date);
     }
 
-    /**
-     * Attempts to convert a String to a Date, using the given format
-     * 
-     * @param date
-     * @param format
-     * @return Date, null if ParseException occurs
-     */
-    public static Date toDate(String date, String format)
+    public static Date toDate(String date, String format) throws ParseException
     {
         DateFormat formatter = new SimpleDateFormat(format);
-        try
-        {
-            return formatter.parse(date);
-        }
-        catch (ParseException e)
-        {
-            return null;
-        }
+        return formatter.parse(date);
     }
 
-    /**
-     * Creates a Date object from the given parms. Time will be 00:00:00.
-     * 
-     * @param year
-     * @param month
-     * @param day
-     * @return Date
-     */
     public static Date getDate(int year, int month, int day)
     {
         assert (month > 0) : "the month parameter is non-zero based";
@@ -109,17 +71,6 @@ public class OFMPDateUtils
         return getDate(year, month, day, 0, 0, 0);
     }
 
-    /**
-     * Creates a Date object from the given parms.
-     * 
-     * @param year
-     * @param month
-     * @param day
-     * @param hour
-     * @param minute
-     * @param second
-     * @return Date
-     */
     public static Date getDate(int year, int month, int day, int hour, int minute, int second)
     {
         assert (month > 0) : "the month parameter is non-zero based";
@@ -130,9 +81,6 @@ public class OFMPDateUtils
         return cal.getTime();
     }
 
-    /**
-     * Returns the date, resetting hours minutes seconds and ms to zero
-     */
     public static Date getDate(Date date)
     {
         Calendar cal = new OFMPCalendar(date);
@@ -140,16 +88,10 @@ public class OFMPDateUtils
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MILLISECOND, 0);
+        cal.set(Calendar.AM_PM, Calendar.AM);
         return cal.getTime();
     }
 
-    /**
-     * Check if the date is a weekend day.
-     * 
-     * @param date
-     * @return true if the date is a saturday or a sunday
-     * @return false if the date is from monday to friday included
-     */
     public static boolean isWeekEndDay(Date date)
     {
         Calendar cal = Calendar.getInstance();
@@ -158,13 +100,6 @@ public class OFMPDateUtils
         return (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY);
     }
 
-    /**
-     * Compare 2 dates about their YYYYMMDD format, removing hours minutes and seconds in the comparison.
-     * 
-     * @return -1 if date1 is lower than date2.
-     * @return 0 if date1 equals date2.
-     * @return 1 if date1 is greater than date2.
-     */
     public static int compare(Date date1, Date date2)
     {
         return org.apache.commons.lang.time.DateUtils.truncate(date1, Calendar.DATE).compareTo(
@@ -186,7 +121,7 @@ public class OFMPDateUtils
 
         Date result = null;
         for (Date date : aDateCollection)
-            if (result == null || OFMPDateUtils.compare(date, result) == -1)
+            if (result == null || compare(date, result) == -1)
                 result = date;
 
         return result;
@@ -199,7 +134,7 @@ public class OFMPDateUtils
 
         Date result = null;
         for (Date date : aDateCollection)
-            if (result == null || OFMPDateUtils.compare(date, result) == 1)
+            if (result == null || compare(date, result) == 1)
                 result = date;
 
         return result;

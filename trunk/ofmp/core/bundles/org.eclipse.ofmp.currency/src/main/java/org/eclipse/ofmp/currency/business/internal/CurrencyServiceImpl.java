@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.ofmp.common.exception.OFMPException;
-import org.eclipse.ofmp.common.exception.Status;
 import org.eclipse.ofmp.common.exception.StatusFactory;
 import org.eclipse.ofmp.currency.business.CurrencyService;
 import org.eclipse.ofmp.currency.dao.CurrencyDAO;

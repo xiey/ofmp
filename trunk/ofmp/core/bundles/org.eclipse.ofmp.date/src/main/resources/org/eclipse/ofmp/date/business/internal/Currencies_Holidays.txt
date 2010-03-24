@@ -1,0 +1,8 @@
+ISOCurrencyCode,ISOCountryCode,RelatedFinancialCentre,EventYear,EventDate,EventDayOfWeek,EventName,FileType
+AUD,AU,Sydney,2011,20110103,Mon,New Year's Day OBS,C
+BRL,BR,Brazilian Real,2011,20110101,Sat,New Year's Day,C
+CAD,CA,Toronto,2010,20100101,Fri,New Year's Day,C
+CHF,CH,Swiss franc,2010,20100101,Fri,New Year's Day,C
+EUR,EU,TARGET (Euro),2010,20100101,Fri,New Year's Day,C
+GBP,GB,London,2011,20110103,Mon,New Year's Day OBS,C
+USD,US,New York,2011,20110101,Sat,New Year's Day,C

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ObjectLab DateCalc Kit
+Bundle-Vendor: ObjectLab Financial Ltd
+Bundle-SymbolicName: net.objectlab.kit.datecalc
+Bundle-Version: 1.0.1
+Export-Package: net.objectlab.kit.datecalc.common; version="1.0.1",
+ net.objectlab.kit.datecalc.jdk; version="1.0.1"

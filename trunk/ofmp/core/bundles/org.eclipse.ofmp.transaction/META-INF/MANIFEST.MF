@@ -10,5 +10,6 @@ Import-Package: javax.jms;version="1.1.0",
  org.apache.geronimo.transaction.log; version="1.0.0",
  org.apache.geronimo.transaction.manager; version="1.0.0",
  org.jencks.factory,
- org.osgi.framework;version="1.4.0"
-
+ org.osgi.framework;version="1.4.0",
+ javax.ejb;version="[2.1.0,2.1.0]",
+ javax.ejb.spi;version="[2.1.0,2.1.0]"

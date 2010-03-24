@@ -26,9 +26,6 @@ public class CurrencyDAOImpl extends SqlMapClientDaoSupport implements CurrencyD
         return m_Currencies.get(aISOCode);
     }
 
-    /*
-     * final afterPropertiesSet method cannot be overridden from SqlMapClientDaoSupport
-     */
     @SuppressWarnings("unchecked")
     public void init() throws Exception
     {

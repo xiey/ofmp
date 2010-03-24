@@ -43,7 +43,7 @@
 
 	<!-- Service -->    
 	<bean id="currencyService" class="org.eclipse.ofmp.currency.business.internal.CurrencyServiceImpl">
-		<!-- FIXME ${reporting.isocode} propery value is not passed -->
+		<!-- FIXME ${reporting.isocode} property value is not passed -->
 		<property name="reportingCurrencyISOCode" value="EUR" />
 		<property name="currencyDAO" ref="currencyDAO" />
 	</bean>

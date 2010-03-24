@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
     <artifactId>ofmp</artifactId>
@@ -16,5 +17,7 @@
   	<module>org.eclipse.ofmp.lib.springframework.osgi</module>
   	<module>org.apache.geronimo.transaction</module>
   	<module>org.eclipse.ofmp.lib.jencks</module>
+  	<module>org.eclipse.ofmp.lib.javax.ejb</module>
+    <module>net.objectlab.kit.datecalc</module>
   </modules>
 </project>

@@ -1,0 +1,56 @@
+Manifest-Version: 1.0
+Export-Package: org.eclipse.ofmp.date.dao;version="1.0.0.M1",org.eclip
+ se.ofmp.date.business;uses:="net.objectlab.kit.datecalc.common,org.ec
+ lipse.ofmp.common.exception,org.eclipse.ofmp.currency.dom";version="1
+ .0.0.M1",org.eclipse.ofmp.date.dom;uses:="org.eclipse.ofmp.currency.d
+ om";version="1.0.0.M1"
+Private-Package: org.eclipse.ofmp.date.business.internal,org.eclipse.o
+ fmp.date.dao.internal,org.eclipse.ofmp.date.dao.internal.mappings
+Ignore-Package: org.eclipse.ofmp.date.business.internal,org.eclipse.of
+ mp.date.dao.internal,org.eclipse.ofmp.date.dao.internal.mappings
+Bundle-ActivationPolicy: lazy
+Built-By: Fred
+Tool: Bnd-0.0.255
+Bundle-Name: Eclipse OFMP Date Bundle (Incubation)
+Created-By: Apache Maven Bundle Plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Vendor: Eclipse OFMP
+Build-Jdk: 1.6.0_11
+Bundle-Version: 1.0.0.M1
+Bnd-LastModified: 1269437059109
+Spring-Context: *;create-asynchronously:=false
+Bundle-ManifestVersion: 2
+Bundle-Description: The OFMP project's goal is to build an extensible,
+  component-based Financial Market Platform based on industry business
+  requirements and state of the art technologies.
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Bundle-DocURL: http://www.eclipse.org/ofmp
+Import-Package: com.ibatis.sqlmap.client;version="2.3.0.677",javax.ejb
+ ,javax.transaction,net.objectlab.kit.datecalc.common;version="1.0.1",
+ net.objectlab.kit.datecalc.jdk;version="1.0",org.aopalliance.aop;vers
+ ion="1.0",org.aopalliance.intercept;version="1.0",org.apache.commons.
+ lang.time;version="2.1",org.apache.log4j;version="1.2",org.aspectj.la
+ ng;version="[1.6.2,2.0.0)",org.aspectj.runtime.reflect;version="[1.6.
+ 2,2.0.0)",org.eclipse.ofmp.common.aop;version="1.0.0",org.eclipse.ofm
+ p.common.dao.ibatis.handlers;version="1.0.0.M1",org.eclipse.ofmp.comm
+ on.exception;version="1.0.0.M1",org.eclipse.ofmp.common.utils;version
+ ="1.0.0.M1",org.eclipse.ofmp.currency.business,org.eclipse.ofmp.curre
+ ncy.dom,org.eclipse.ofmp.date.business;version="1.0.0.M1",org.eclipse
+ .ofmp.date.dao;version="1.0.0.M1",org.eclipse.ofmp.date.dom;version="
+ 1.0.0.M1",org.springframework.aop;version="2.5.5.A",org.springframewo
+ rk.aop.framework;version="2.5.5.A",org.springframework.beans;version=
+ "2.5.5.A",org.springframework.beans.factory;version="2.5.5.A",org.spr
+ ingframework.beans.factory.annotation;version="2.5.5.A",org.springfra
+ mework.beans.factory.aspectj;version="2.5.5.A",org.springframework.be
+ ans.factory.config;version="2.5.5.A",org.springframework.beans.factor
+ y.wiring;version="2.5.5.A",org.springframework.core;version="2.5.5.A"
+ ,org.springframework.core.io.support;version="2.5.5.A",org.springfram
+ ework.dao.support;version="2.5.5.A",org.springframework.instrument.cl
+ assloading;version="2.5.5.A",org.springframework.orm.ibatis;version="
+ 2.5.5.A",org.springframework.orm.ibatis.support;version="2.5.5.A",org
+ .springframework.security;version="2.0.0.A",org.springframework.secur
+ ity.intercept;version="2.0.0.A",org.springframework.transaction;versi
+ on="2.5.5.A",org.springframework.transaction.jta;version="2.5.5.A",or
+ g.springframework.transaction.support;version="2.5.5.A"
+Bundle-SymbolicName: org.eclipse.ofmp.date
+

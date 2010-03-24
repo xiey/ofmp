@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import org.eclipse.ofmp.common.utils.OFMPDateUtils;
+import org.eclipse.ofmp.common.utils.DateUtils;
 import org.eclipse.ofmp.currency.business.CurrencyRateQuery;
 import org.eclipse.ofmp.currency.business.CurrencyRateService;
 import org.eclipse.ofmp.currency.dao.CurrencyRateDAO;
@@ -32,7 +32,7 @@ public class CurrencyRateDAOImpl extends SqlMapClientDaoSupport implements Curre
 
     public CurrencyRate find(Currency aCurrency, Date fixingDate) throws SQLException
     {
-        fixingDate = OFMPDateUtils.getDate(fixingDate);
+        fixingDate = DateUtils.getDate(fixingDate);
 
         CurrencyRateQuery query = new CurrencyRateQuery();
 
@@ -49,9 +49,9 @@ public class CurrencyRateDAOImpl extends SqlMapClientDaoSupport implements Curre
         if (query != null)
         {
             if (query.getFixingDateFrom() != null)
-                query.setFixingDateFrom(OFMPDateUtils.getDate(query.getFixingDateFrom()));
+                query.setFixingDateFrom(DateUtils.getDate(query.getFixingDateFrom()));
             if (query.getFixingDateTo() != null)
-                query.setFixingDateTo(OFMPDateUtils.getDate(query.getFixingDateTo()));
+                query.setFixingDateTo(DateUtils.getDate(query.getFixingDateTo()));
         }
 
         return getSqlMapClient().queryForList("CurrencyRate.selectCurrencyRates", query, 0, 200);
@@ -60,7 +60,7 @@ public class CurrencyRateDAOImpl extends SqlMapClientDaoSupport implements Curre
     @SuppressWarnings("unchecked")
     public void delete(Currency currency, Date fixingDate) throws SQLException
     {
-        fixingDate = OFMPDateUtils.getDate(fixingDate);
+        fixingDate = DateUtils.getDate(fixingDate);
 
         HashMap map = new HashMap();
         map.put("ISOCODE", currency.getISOCode());
@@ -71,7 +71,7 @@ public class CurrencyRateDAOImpl extends SqlMapClientDaoSupport implements Curre
 
     public CurrencyRate findNearest(Currency currency, Date fixingDate, int inequality) throws SQLException
     {
-        fixingDate = OFMPDateUtils.getDate(fixingDate);
+        fixingDate = DateUtils.getDate(fixingDate);
 
         CurrencyRateQuery query = new CurrencyRateQuery();
 
