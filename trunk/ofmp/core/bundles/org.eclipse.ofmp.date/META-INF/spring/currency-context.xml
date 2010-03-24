@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd
+                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd"
+    >
+    
+    <bean id="currencyProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       <property name="ignoreUnresolvablePlaceholders" value="true"/>
+       <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+       <property name="properties">
+           <props>
+			   <prop key="reporting.isocode">EUR</prop>
+           </props>
+       </property>
+   	</bean>    
+
+	<tx:annotation-driven transaction-manager="springTransactionManager"/>
+
+	<!-- DAO -->    
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="classpath:org/eclipse/ofmp/currency/dao/internal/ibatisconfig.xml"/>
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<bean id="currencyDAO" class="org.eclipse.ofmp.currency.dao.internal.CurrencyDAOImpl" init-method="init">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+
+	<bean id="currencyRateDAO" class="org.eclipse.ofmp.currency.dao.internal.CurrencyRateDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+
+	<!-- Configure CurrencyTypeHandler with the relevant service using Equinox Aspects for load time weaving -->
+	<bean class="org.eclipse.ofmp.currency.dao.handlers.CurrencyTypeHandler" scope="prototype">
+		<property name="currencyService" ref="currencyService" />
+	</bean>
+
+	<!-- Service -->    
+	<bean id="currencyService" class="org.eclipse.ofmp.currency.business.internal.CurrencyServiceImpl">
+		<!-- FIXME ${reporting.isocode} property value is not passed -->
+		<property name="reportingCurrencyISOCode" value="EUR" />
+		<property name="currencyDAO" ref="currencyDAO" />
+	</bean>
+
+	<bean id="currencyRateService" parent="serviceTemplate">
+		<property name="target">
+			<bean class="org.eclipse.ofmp.currency.business.internal.CurrencyRateServiceImpl">
+				<property name="currencyRateDAO" ref="currencyRateDAO"/>
+			</bean>
+		</property>
+	</bean>
+
+</beans>
